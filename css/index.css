@@ -7,3 +7,10 @@ body{
   display: flex;
   flex-direction: row;
 }
+
+.vertical-line {
+  margin-top: 5vh;
+  width: 0.01px;
+  height: 90vh;
+  border: 1px solid #D0D0D0;
+} 
