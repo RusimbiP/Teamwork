@@ -124,10 +124,22 @@ input:focus{
 /* tablet (portrait) ----------- */
 @media only screen and (max-width : 1024px) {
   .left {
-    margin-top: -70%;
+    margin-top: 25%;
+    width: 40%;
   }
-  .signup {
-    margin-left: -3%;
+ 
+  .text-box{
+    width: 80%;
+  }
+
+  .btn{
+    width: 80%;
+  }
+}
+
+@media only screen and (width : 1024px) {
+  .signup{
+    margin-left: -17%;
   }
 }
 
