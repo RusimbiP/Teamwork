@@ -21,3 +21,8 @@ body{
   width: 49%;
   padding-top: 20%; 
 }
+
+.left p{
+  align-self: center;
+  margin-top: -15px;
+}
