@@ -164,3 +164,42 @@ input:focus{
     visibility: hidden;
   }
 }
+
+/* responsive and iphone 5/SE (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  body{
+    font-size: 14px;
+  }
+  
+  .btn, .textbox input, select {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .btn, .textbox input {
+    padding-top: 0px;
+    font-size: 14px;
+  }
+
+  .btn {
+    padding-top: 5px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup{
+    margin-top: 5%;
+    border-radius: 10px;
+    margin-left: 1.5%;
+    box-shadow: 0 1px 1rem rgba(0, 0, 0, .1);
+  }
+
+  .vertical-line, .left{
+    display: none;
+    visibility: hidden;
+  }
+}
