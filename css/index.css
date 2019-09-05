@@ -46,3 +46,8 @@ body{
   color: #0045F8;
   font-weight: bold;
 }
+
+.signup{
+  width: 49%;
+  padding: 10px;
+}
