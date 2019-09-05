@@ -51,3 +51,10 @@ body{
   width: 49%;
   padding: 10px;
 }
+
+.text-box{
+  width: 100%;
+  overflow: hidden;
+  font-size: 16px;
+  margin: 10px 0;
+}
