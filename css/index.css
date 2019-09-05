@@ -14,3 +14,10 @@ body{
   height: 90vh;
   border: 1px solid #D0D0D0;
 } 
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  padding-top: 20%; 
+}
