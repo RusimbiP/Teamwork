@@ -216,3 +216,8 @@ input:focus{
   }
 }
 
+/*Interactive css*/
+
+a {
+  text-decoration:none;
+}
