@@ -58,3 +58,8 @@ body{
   font-size: 16px;
   margin: 10px 0;
 }
+
+label {
+  color: gray;
+  font-family: 'Marat Sans Regular';
+}
