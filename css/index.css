@@ -89,3 +89,22 @@ select {
 input:focus{
   border-bottom: 2.5px solid #0087F3;
 }
+
+.btn {
+  font-family: 'Marat Sans Regular'; 
+  width: 100%;
+  outline: none;
+  border: 1px solid #0045F8;
+  color: white;
+  padding: 5px;
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background: #0045F8;  
+}
+
+.btn:hover {
+  border: 1px solid #feaf30;
+  background-color: #feaf30;
+  color: black;
+}
