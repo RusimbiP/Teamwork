@@ -108,3 +108,7 @@ input:focus{
   background-color: #feaf30;
   color: black;
 }
+
+.btn, .logo, select {
+  border-radius: 2px;
+}
