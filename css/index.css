@@ -115,7 +115,7 @@ input:focus{
 
 /* laptops and desktops ----------- */
 @media only screen and (min-width: 1024px) {
-  .first-half, .second-half, .third-half {
+  #first-half, #second-half, #third-half {
     width: 320px;
     margin-left: 27%;
   }
@@ -215,3 +215,4 @@ input:focus{
     visibility: hidden;
   }
 }
+
