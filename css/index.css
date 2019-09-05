@@ -26,3 +26,23 @@ body{
   align-self: center;
   margin-top: -15px;
 }
+
+.logo {
+  font-family: 'Noe Display Bold';
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  background: #0045F8;
+  padding: 15px 20px 15px 20px;
+}
+
+.slogan {
+  font-family: 'Marat Sans Regular';
+  font-size: 20px;
+  color: grey;
+}
+
+.slogan span {
+  color: #0045F8;
+  font-weight: bold;
+}
