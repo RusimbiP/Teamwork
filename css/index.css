@@ -112,3 +112,11 @@ input:focus{
 .btn, .logo, select {
   border-radius: 2px;
 }
+
+/* laptops and desktops ----------- */
+@media only screen and (min-width: 1024px) {
+  .first-half, .second-half, .third-half {
+    width: 320px;
+    margin-left: 27%;
+  }
+}
