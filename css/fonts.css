@@ -20,3 +20,8 @@
   font-family: 'Noe Display Regular';
   src: url(../Assets/fonts/noe/noe-display-regular.ttf);
 }
+
+@font-face {
+  font-family: 'Noe Display Bold';
+  src: url(../Assets/fonts/noe/noe-display-bold.woff);
+}
