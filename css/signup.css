@@ -1,0 +1,231 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-line {
+  margin-top: 5vh;
+  width: 0.01px;
+  height: 90vh;
+  border: 1px solid #D0D0D0;
+} 
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  padding-top: 20%; 
+}
+
+.left p{
+  align-self: center;
+  margin-top: -15px;
+}
+
+.logo {
+  font-family: 'Noe Display Bold';
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  background: #0045F8;
+  padding: 15px 20px 15px 20px;
+}
+
+.slogan {
+  font-family: 'Marat Sans Regular';
+  font-size: 20px;
+  color: grey;
+}
+
+.slogan span {
+  color: #0045F8;
+  font-weight: bold;
+}
+
+.signup{
+  width: 49%;
+  padding: 10px;
+}
+
+.text-box{
+  width: 100%;
+  overflow: hidden;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+label {
+  color: gray;
+  font-family: 'Marat Sans Regular';
+}
+
+input {
+  font-family: 'Marat Sans DemiBold'; 
+  border: none;
+  outline: none;
+  background: none;
+  color: black;
+  font-size: 18px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  width: 100%;
+  border-bottom: 1.5px solid #E6E6E6;
+}
+
+select {
+  font-family: 'Marat Sans Regular';
+  font-size: 14px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+
+input:focus{
+  border-bottom: 2.5px solid #0087F3;
+}
+
+.btn {
+  font-family: 'Marat Sans Regular'; 
+  width: 100%;
+  outline: none;
+  border: 1px solid #0045F8;
+  color: white;
+  padding: 5px;
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background: #0045F8;  
+}
+
+.btn:hover {
+  border: 1px solid #feaf30;
+  background-color: #feaf30;
+  color: black;
+}
+
+.btn, .logo, select {
+  border-radius: 2px;
+}
+
+/* laptops and desktops ----------- */
+@media only screen and (min-width: 1024px) {
+  #first-half, #second-half, #third-half {
+    width: 320px;
+    margin-left: 27%;
+  }
+
+  form {
+    margin-top: 10%;
+    width: 70%;
+    max-height: 60vh;
+    overflow: auto;
+  }
+
+  h3, h5 {
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+
+/* tablet (portrait) ----------- */
+@media only screen and (max-width : 1024px) {
+  .left {
+    margin-top: 25%;
+    width: 40%;
+  }
+ 
+  .text-box{
+    width: 100%;
+  }
+
+  .btn{
+    width: 80%;
+  }
+}
+
+@media only screen and (width : 1024px) {
+  .signup{
+    margin-left: -17%;
+  }
+}
+
+/* smartphones (portrait) ----------- */
+@media only screen and (max-width : 441px) {
+  body{
+    font-size: 16px;
+  }
+    
+  .btn {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 6px;
+  }
+  .btn {
+    padding-top: 6px;
+  }
+
+  .btn {
+    margin-bottom: 30px;
+  }
+
+  .signup{
+    width: 90%;
+    margin-top: 10%;
+    border-radius: 10px;
+    margin-left: 1.5%;
+    box-shadow: 0 1px 1rem rgba(0, 0, 0, .1);
+  }
+
+  .vertical-line, .left{
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/* responsive and iphone 5/SE (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  body{
+    font-size: 14px;
+  }
+  
+  .btn, .textbox input, select {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .btn, .textbox input {
+    padding-top: 0px;
+    font-size: 14px;
+  }
+
+  .btn {
+    padding-top: 5px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup{
+    margin-top: 5%;
+    border-radius: 10px;
+    margin-left: 1.5%;
+    box-shadow: 0 1px 1rem rgba(0, 0, 0, .1);
+  }
+
+  .vertical-line, .left{
+    display: none;
+    visibility: hidden;
+  }
+}
+
