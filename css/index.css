@@ -52,6 +52,13 @@ body{
   padding: 10px;
 }
 
+form {
+  margin-top: 10%;
+  width: 70%;
+  max-height: 60vh;
+  overflow: auto;
+}
+
 .text-box{
   width: 100%;
   overflow: hidden;
