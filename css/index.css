@@ -113,10 +113,6 @@ input:focus{
   border-radius: 2px;
 }
 
-#first-half, #second-half, #third-half {
-  margin-top: 30%;
-}
-
 /* laptops and desktops ----------- */
 @media only screen and (min-width: 1024px) {
   #first-half, #second-half, #third-half {
@@ -172,7 +168,7 @@ input:focus{
     margin-top: 10%;
     border-radius: 10px;
     margin-left: 1.5%;
-    /* box-shadow: 0 1px 1rem rgba(0, 0, 0, .1); */
+    box-shadow: 0 1px 1rem rgba(0, 0, 0, .1);
   }
 
   .vertical-line, .left{
@@ -211,7 +207,7 @@ input:focus{
     margin-top: 5%;
     border-radius: 10px;
     margin-left: 1.5%;
-    /* box-shadow: 0 1px 1rem rgba(0, 0, 0, .1); */
+    box-shadow: 0 1px 1rem rgba(0, 0, 0, .1);
   }
 
   .vertical-line, .left{
@@ -220,11 +216,7 @@ input:focus{
   }
 }
 
-a {
-  text-decoration:none;
-}
+/*Interactive css*/
 
-#second-half, #third-half {
-  display: none;
-}
+
 
