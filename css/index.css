@@ -52,13 +52,6 @@ body{
   padding: 10px;
 }
 
-form {
-  margin-top: 10%;
-  width: 70%;
-  max-height: 60vh;
-  overflow: auto;
-}
-
 .text-box{
   width: 100%;
   overflow: hidden;
@@ -126,6 +119,14 @@ input:focus{
     width: 320px;
     margin-left: 27%;
   }
+
+  form {
+    margin-top: 10%;
+    width: 70%;
+    max-height: 60vh;
+    overflow: auto;
+  }
+  
 }
 
 /* tablet (portrait) ----------- */
@@ -136,7 +137,7 @@ input:focus{
   }
  
   .text-box{
-    width: 80%;
+    width: 100%;
   }
 
   .btn{
