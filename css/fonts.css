@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Marat Sans Light';
+  src: url(../Assets/fonts/marat-sans/Marat\ Sans\ Light.otf);
+}
+@font-face {
+  font-family: 'Marat Sans Regular';
+  src: url(../Assets/fonts/marat-sans/Marat\ Sans\ Regular.otf);
+}
+
+@font-face {
+  font-family: 'Marat Sans DemiBold';
+  src: url(../Assets/fonts/marat-sans/Marat\ Sans\ DemiBold.otf);
+}
+@font-face {
+  font-family: 'Marat Sans Bold';
+  src: url(../Assets/fonts/marat-sans/Marat\ Sans\ Bold.otf);
+}
+
+@font-face {
+  font-family: 'Noe Display Regular';
+  src: url(../Assets/fonts/noe/noe-display-regular.ttf);
+}
+
+@font-face {
+  font-family: 'Noe Display Bold';
+  src: url(../Assets/fonts/noe/noe-display-bold.woff);
+}
