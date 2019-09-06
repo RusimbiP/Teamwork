@@ -47,7 +47,7 @@ body{
   font-weight: bold;
 }
 
-.signin{
+.signup{
   width: 49%;
   padding: 10px;
 }
@@ -151,7 +151,7 @@ input:focus{
 }
 
 @media only screen and (width : 1024px) {
-  .signin{
+  .signup{
     margin-left: -17%;
   }
 }
@@ -176,7 +176,7 @@ input:focus{
     margin-bottom: 30px;
   }
 
-  .signin{
+  .signup{
     width: 90%;
     margin-top: 10%;
     border-radius: 10px;
@@ -216,7 +216,7 @@ input:focus{
     flex-direction: column;
   }
 
-  .signin{
+  .signup{
     margin-top: 5%;
     border-radius: 10px;
     margin-left: 1.5%;
