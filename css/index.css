@@ -126,6 +126,11 @@ input:focus{
     max-height: 60vh;
     overflow: auto;
   }
+
+  h3, h5 {
+    display: flex;
+    justify-content: center;
+  }
   
 }
 
