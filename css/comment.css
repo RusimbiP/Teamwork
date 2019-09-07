@@ -1,0 +1,63 @@
+.comment-container {
+  position: relative;
+  max-width: 700px;
+  margin: 50px auto;
+  overflow: hidden;
+  font-family: serif;
+}
+.comment-container .commentor {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.comment-container .commentor .avatar {
+  border-radius: 50%;
+  width: 40px;
+}
+.comment-container .commentor .name {
+  margin-left: 5px;
+  transform: translateY(-100px);
+  display: inline-block;
+  color: #2d69eb;
+  transition: all 0.3s;
+}
+.comment-container .placeholder {
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  color: #999;
+  left: 60px;
+  margin-top: -15px;
+}
+.comment-container textarea {
+  height: 70px;
+  transition: all 0.3s;
+  font-size: 18px;
+  box-sizing: border-box;
+  color: #fff;
+  width: 600px;
+}
+.comment-container .btns {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.comment-container.toggled .commentor .name {
+  transform: translateY(0);
+}
+.comment-container.toggled textarea {
+  height: 200px;
+  color: #444;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.comment-container.toggled .placeholder {
+  display: none;
+}
+.comment-container.toggled .btns {
+  opacity: 1;
+  visibility: visible;
+}
