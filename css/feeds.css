@@ -83,3 +83,10 @@ figure {
     margin-left: -37px;
   }
 }
+
+/* smartphones (portrait) ----------- */
+@media only screen and (max-width : 441px) {
+  .container{
+    flex-direction: column;
+  }
+}
