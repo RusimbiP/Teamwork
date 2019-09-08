@@ -40,3 +40,8 @@ figure {
 .button:focus {
   outline: none;
 }
+
+.title, .preview {
+  width: 280px;
+  margin-left: 10px;
+}
