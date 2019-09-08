@@ -76,6 +76,13 @@ figure {
   padding-right:5px;
 }
 
+/* responsive and iphone6/7/8 (portrait) ----------- */
+@media only screen and (max-width : 375px){
+  .container {
+    margin-left: -12px;
+  }
+}
+
 /* responsive and iphone 5/SE (portrait) ----------- */
 @media only screen and (max-width:320px) {
   .container{
