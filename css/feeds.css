@@ -76,6 +76,7 @@ figure {
   padding-right:5px;
 }
 
+/* responsive and iphone 5/SE (portrait) ----------- */
 @media only screen and (max-width:320px) {
   .container{
     flex-direction: column;
