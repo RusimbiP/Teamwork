@@ -75,3 +75,10 @@ figure {
   margin-top: 13px;
   padding-right:5px;
 }
+
+@media only screen and (max-width:320px) {
+  .container{
+    flex-direction: column;
+    margin-left: -37px;
+  }
+}
