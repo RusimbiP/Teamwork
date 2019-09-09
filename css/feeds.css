@@ -1,0 +1,117 @@
+.container {
+  display: flex;
+}
+
+figure {
+  font-family: 'Marat Sans Light';
+  width: 300px;
+  box-shadow: 0 1px 1.5rem rgba(0, 70, 248, 0.493);
+}
+
+.article img {
+  width: 300px;
+}
+
+.title {
+  font-family: 'Marat Sans DemiBold';
+  font-size: 22px;
+}
+
+.button {
+  margin-top: 3px;
+  border-radius: 1px;
+  border: 1px solid #0045F8;
+  background-color: #0045F8;
+  color: aliceblue;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  width:100%;
+  text-align: center;
+  transition: all 0.5s;
+  box-shadow: 0 1px 1.5rem rgba(0, 70, 248, 0.411);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.title, .preview {
+  width: 280px;
+  margin-left: 10px;
+}
+.author img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left:5px;
+}
+
+.profile {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile span {
+  margin-top: 13px;
+  padding-left:5px; 
+}
+.author {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.time {
+  margin-top: 13px;
+  padding-right:5px;
+}
+
+.tablet {
+  display: none;
+}
+/* tablet (portrait) ----------- */
+@media only screen and (max-width : 1024px) {
+  .tablet {
+    display: block;
+  }
+  .laptop {
+    display: none;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* responsive and iphone6/7/8 (portrait) ----------- */
+@media only screen and (max-width : 375px){
+  .container {
+    margin-left: -12px;
+  }
+}
+
+/* responsive and iphone 5/SE (portrait) ----------- */
+@media only screen and (max-width:320px) {
+  .container{
+    flex-direction: column;
+    margin-left: -37px;
+  }
+}
+
+/* smartphones (portrait) ----------- */
+@media only screen and (max-width : 441px) {
+  .container{
+    flex-direction: column;
+  }
+}
