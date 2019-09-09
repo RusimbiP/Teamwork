@@ -76,6 +76,24 @@ figure {
   padding-right:5px;
 }
 
+.tablet {
+  display: none;
+}
+/* tablet (portrait) ----------- */
+@media only screen and (max-width : 1024px) {
+  .tablet {
+    display: block;
+  }
+  .laptop {
+    display: none;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 /* responsive and iphone6/7/8 (portrait) ----------- */
 @media only screen and (max-width : 375px){
   .container {
