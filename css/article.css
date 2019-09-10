@@ -1,6 +1,8 @@
 .content {
+  font-size: 22px;
   width: 55%;
   margin-left: 25%;
+  font-family: 'Marat Sans Light';
 }
 
 img{
@@ -12,10 +14,12 @@ img{
 	background:url("https://avatars3.githubusercontent.com/u/54870069?s=460&v=4")no-repeat center / contain;
 	width:60px;
 	height:60px;
-	border-radius:50%;
+  border-radius:50%;
+  font-size: 17px;
 	}
   
   .author-profile span{
+    font-family: 'Marat Sans Regular';
     margin-left: 70px;
     padding-top: 11px;
     z-index:-1;
@@ -27,4 +31,13 @@ img{
   .time-stamp {
     margin-top: 20px;
     color:gray;
+  }
+
+  .title {
+    font-family: 'Noe Display Regular';
+    font-size: 40px;
+  }
+
+  b {
+    font-family: 'Marat Sans DemiBold';
   }
