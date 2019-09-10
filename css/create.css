@@ -64,3 +64,21 @@ p:empty::before {
   font-size: 16px;
   margin-top: 15px;
 }
+
+/*responsive*/
+@media only screen and (max-width: 441px) {
+  .container, #toolbar, #editor{
+    width: 100%;
+  }
+  #editor p {
+    width: 100%;
+    margin-left: -27.5%;
+  }
+  .fa, .fas {
+    padding: 7px;
+  }
+
+  .publishBtn{
+    margin: 7px;
+  }
+}
