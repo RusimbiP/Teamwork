@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/create.css">
+  <title>Create | Share</title>
+</head>
+<body>
+  <div class="container">
+    <section id="toolbar">
+        <button id="bold" onclick="makeBold()"><i class="fa fa-bold"></i></button>
+        <button id="italic" onclick="makeItalic()"><i class="fa fa-italic"></i></button>
+        <button id="underline" onclick="doUnderline()"><i class="fa fa-underline"></i></button>
+      
+        <button onclick="justifyLeft()"><i class="fa fa-align-left"></i></button>
+        <button onclick="justifyCenter()"><i class="fa fa-align-center"></i></button>
+        <button onclick="justifyRight()"><i class="fa fa-align-right"></i></button>
+        
+        <button onclick="doAddImage()"><i class="fas fa-image"></i></button>
+
+        <button class="publishBtn">Publish</button>
+    </section>
+    <section id="editor">
+        <p class="title" contenteditable="true" data-placeholder="Title goes here..."></p>
+        <p class="subtitle" contenteditable="true" data-placeholder="Sub title goes here..."></p>
+        <p class="content" contenteditable="true" data-placeholder="Content goes here..."></p>
+    </section>
+    </div>
+  <script src="https://kit.fontawesome.com/7af4281650.js"></script>
+</body>
+</html>
