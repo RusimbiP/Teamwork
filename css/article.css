@@ -2,3 +2,24 @@
   width: 55%;
   margin-left: 25%;
 }
+
+.author-profile{
+	background:url("https://avatars3.githubusercontent.com/u/54870069?s=460&v=4")no-repeat center / contain;
+	width:60px;
+	height:60px;
+	border-radius:50%;
+	}
+  
+  .author-profile span{
+    margin-left: 70px;
+    padding-top: 11px;
+    z-index:-1;
+    display:block;
+    position:absolute;
+    text-align:center;
+  }
+
+  .time-stamp {
+    margin-top: 20px;
+    color:gray;
+  }
