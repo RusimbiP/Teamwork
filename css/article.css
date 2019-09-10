@@ -1,0 +1,58 @@
+.content {
+  font-size: 22px;
+  width: 55%;
+  margin-left: 25%;
+  font-family: 'Marat Sans Light';
+}
+
+img{
+  max-width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.author-profile{
+	background:url("https://avatars3.githubusercontent.com/u/54870069?s=460&v=4")no-repeat center / contain;
+	width:60px;
+	height:60px;
+  border-radius:50%;
+  font-size: 17px;
+  margin-top: -25px;
+  margin-bottom: 20px;
+	}
+  
+  .author-profile span{
+    font-family: 'Marat Sans Regular';
+    margin-left: 70px;
+    padding-top: 11px;
+    z-index:-1;
+    display:block;
+    position:absolute;
+    text-align:center;
+  }
+
+  .time-stamp {
+    margin-top: 20px;
+    color:gray;
+  }
+
+  .title {
+    font-family: 'Noe Display Regular';
+    font-size: 40px;
+  }
+
+  .subtitle {
+    margin-top: -40px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: grey;
+  }
+
+  b {
+    font-family: 'Marat Sans DemiBold';
+  }
+
+  blockquote {
+    border-left: 5px solid lightgrey;
+    border-radius: 3px;
+    padding-left: 6px;
+  }
