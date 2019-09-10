@@ -1,0 +1,20 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.fa, .fas{
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+}
+#toolbar {
+  background: #2200EF;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
