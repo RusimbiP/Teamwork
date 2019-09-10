@@ -8,15 +8,15 @@
 <body>
   <div class="container">
     <section id="toolbar">
-        <button id="bold" onclick="makeBold()">B</button>
-        <button id="italic" onclick="makeItalic()"><i>I</i></button>
-        <button id="underline" onclick="doUnderline()">U</button>
+        <button id="bold" onclick="makeBold()"><i class="fa fa-bold"></i></button>
+        <button id="italic" onclick="makeItalic()"><i class="fa fa-italic"></i></button>
+        <button id="underline" onclick="doUnderline()"><i class="fa fa-underline"></i></button>
+      
+        <button onclick="justifyLeft()"><i class="fa fa-align-left"></i></button>
+        <button onclick="justifyCenter()"><i class="fa fa-align-center"></i></button>
+        <button onclick="justifyRight()"><i class="fa fa-align-right"></i></button>
         
-        <button onclick="justifyLeft()">Left </button>
-        <button onclick="justifyCenter()">Center </button>
-        <button onclick="justifyRight()">Right </button>
-        
-        <button onclick="doAddImage()">Add Image</button>
+        <button onclick="doAddImage()"><i class="fas fa-image"></i></button>
         <div id="editor" contenteditable="true">
           <p class="title">Title goes here...</p>
           <p class="subtitle">Sub title goes here...</p>
@@ -24,5 +24,6 @@
         </div>
       </div>
     </section>
+  <script src="https://kit.fontawesome.com/7af4281650.js"></script>
 </body>
 </html>
