@@ -56,3 +56,11 @@ p[data-placeholder]:not([data-placeholder=""]):empty::before {
 p:empty::before {
   content: 'fallback placeholder';
 }
+
+.publishBtn {
+  height: 30px;
+  background: #feaf30;
+  color: black;
+  font-size: 16px;
+  margin-top: 15px;
+}
