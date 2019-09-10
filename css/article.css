@@ -40,6 +40,13 @@ img{
     font-size: 40px;
   }
 
+  .subtitle {
+    margin-top: -40px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: grey;
+  }
+
   b {
     font-family: 'Marat Sans DemiBold';
   }
