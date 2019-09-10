@@ -18,3 +18,41 @@ button {
   border: none;
 }
 
+#editor {
+  margin-top: 20px;
+  width: 55%;
+  margin-left: 27.5%;
+  border:none;
+}
+
+.title {
+  font-family: 'Noe Display Regular';
+  font-size: 40px;
+}
+
+.subtitle {
+  font-family: 'Marat Sans Regular';
+  font-size: 30px;
+  color: grey;
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+
+.content {
+  font-size: 22px;
+  font-family: 'Marat Sans Light';
+}
+
+.placeholder {
+  color: rgb(53, 49, 49);
+}
+
+p:empty::before {
+  color: grey;
+}
+p[data-placeholder]:not([data-placeholder=""]):empty::before {
+  content: attr(data-placeholder);
+}
+p:empty::before {
+  content: 'fallback placeholder';
+}
