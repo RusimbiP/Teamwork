@@ -65,6 +65,10 @@ p:empty::before {
   margin-top: 15px;
 }
 
+img{
+  max-width: 100%;
+}
+
 /*responsive*/
 @media only screen and (max-width: 441px) {
   .container, #toolbar, #editor{
