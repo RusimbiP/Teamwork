@@ -23,7 +23,7 @@
 }
 .comment-container .placeholder {
   position: absolute;
-  top: 50%;
+  top: 30%;
   font-size: 18px;
   color: #999;
   left: 60px;
@@ -72,4 +72,23 @@
   z-index: 999;
   position: relative;
   background: transparent;
+}
+
+.placeholder {
+  margin-top: -30px;
+}
+
+.btn-default {
+  font-family: 'Marat Sans Regular'; 
+  width: 20%;
+  outline: none;
+  border: 1px solid #0045F8;
+  color: white;
+  padding: 5px;
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background: #0045F8;
+  border-radius: 3px; 
+  margin-left: 70%;
 }
