@@ -67,3 +67,9 @@
     width: 100%;
   }
 }
+
+.form-control {
+  z-index: 999;
+  position: relative;
+  background: transparent;
+}
