@@ -1,6 +1,6 @@
 .comment-container {
   position: relative;
-  max-width: 700px;
+  max-width: 700px; 
   margin: 50px auto;
   overflow: hidden;
   font-family: serif;
@@ -30,12 +30,12 @@
   margin-top: -15px;
 }
 .comment-container textarea {
-  height: 70px;
+  height: 70px; 
   transition: all 0.3s;
   font-size: 18px;
   box-sizing: border-box;
   color: #fff;
-  width: 600px;
+  width: 90%;
 }
 .comment-container .btns {
   position: absolute;
@@ -64,6 +64,6 @@
 
 @media only screen and (max-width : 600px) {
   .comment-container {
-    width: 100%;
+    width: 90%;
   }
 }
