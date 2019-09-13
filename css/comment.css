@@ -35,7 +35,7 @@
   font-size: 18px;
   box-sizing: border-box;
   color: #fff;
-  width: 90%;
+  width: 100%;
 }
 .comment-container .btns {
   position: absolute;
@@ -62,11 +62,11 @@
   visibility: visible;
 }
 
-@media only screen and (max-width : 600px) {
+/* @media only screen and (max-width : 600px) {
   .comment-container {
     width: 100%;
   }
-}
+} */
 
 .form-control {
   z-index: 999;
@@ -90,9 +90,21 @@
   cursor: pointer;
   background: #0045F8;
   border-radius: 3px; 
-  margin-left: 70%;
+  margin-left: 80%;
 }
 
 .avatar {
   margin-top: 0px;
+}
+
+@media only screen and (max-width:441){
+  .comment-container{
+    width: 90%;
+    
+  }
+
+  .form-control {
+    margin-left: 5%;
+    width: 100%;
+  }
 }
