@@ -39,38 +39,26 @@ html, body {
   background: #008833;
 }
 
-label {
-  margin: 0 40px 0 0;
-  font-size: 26px;
-  line-height: 70px;
-  display: none;
-  width: 26px;
-  float: right; 
-  color: white;
-}
-#toggle {
-  display: none;
-}
-
 
 @media only screen and (max-width: 500px) {
-  label {
-      display: block;
-      cursor: pointer;
-  }
+
   .menu {
       text-align: center;
       width: 100%;
-      display: none;
   }
   .menu a {
-      display: block;
+      font-size: 16px;
       border-bottom: 1px solid #EAEAEB;
       margin: 0;
-   
+      padding:15px;
+      text-decoration: none;
   }
-  #toggle:checked + .menu {
-      display: block;
+  .active {
+    background: none;
+  }
+  .logo {
+    display: none;
+    visibility: hidden;
   }
 }
 
