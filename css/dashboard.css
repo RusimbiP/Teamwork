@@ -1,0 +1,30 @@
+body {
+  color: black;
+  background-color: #F2F3F2;
+  display: flex;
+  justify-content: center;
+  }
+  
+table {
+  width: 50%;
+  border-collapse: collapse;
+  background: #fff;
+  color: rgb(0, 0, 0);
+  margin-top: 5%;
+  box-shadow: 0 1px 1rem rgba(0, 70, 248, 0.26);
+  }
+  
+td, th {
+  padding: 8px;
+  text-align: left;
+  }
+  
+tr {
+  border: 2px solid rgb(224, 224, 224);
+}
+  
+th {
+  background: #1F00DA;
+  font-weight: bold;
+  color: white;
+}
