@@ -51,6 +51,20 @@ body{
   width: 49%;
   padding: 10px;
 }
+h5{
+  margin-top: -8px;
+}
+
+h5, h3 {
+  font-size: 18px;
+  font-family: 'Marat Sans DemiBold';
+  margin-left: 18%;
+}
+
+a {
+  text-decoration: none;
+  color: #0045F8;
+}
 
 .text-box{
   width: 100%;
@@ -126,12 +140,6 @@ input:focus{
     max-height: 60vh;
     overflow: auto;
   }
-
-  h3, h5 {
-    display: flex;
-    justify-content: center;
-  }
-  
 }
 
 /* tablet (portrait) ----------- */

@@ -47,9 +47,24 @@ body{
   font-weight: bold;
 }
 
+h5, h3 {
+  font-size: 18px;
+  font-family: 'Marat Sans DemiBold';
+  margin-left: 18%;
+}
+
+a {
+  text-decoration: none;
+  color: #0045F8;
+}
+
+h5{
+  margin-top: -8px;
+}
 .signin{
   width: 49%;
   padding: 10px;
+  margin-top: 10%;
 }
 
 .text-box{
@@ -125,11 +140,6 @@ input:focus{
     width: 70%;
     max-height: 60vh;
     overflow: auto;
-  }
-
-  h3, h5 {
-    display: flex;
-    justify-content: center;
   }
   
 }
