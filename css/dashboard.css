@@ -2,15 +2,19 @@ body {
   color: black;
   background-color: #F2F3F2;
   display: flex;
-  justify-content: center;
-  }
+  flex-direction: column;
+}
+
+h1 {
+  align-self: center;
+}
   
 table {
+  align-self: center;
   width: 50%;
   border-collapse: collapse;
   background: #fff;
   color: rgb(0, 0, 0);
-  margin-top: 5%;
   box-shadow: 0 1px 1rem rgba(0, 70, 248, 0.26);
   }
   
