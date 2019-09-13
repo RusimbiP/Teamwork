@@ -1,0 +1,52 @@
+body {
+  color: black;
+  background-color: #F2F3F2;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Marat Sans Regular';
+}
+
+h1 {
+  align-self: center;
+}
+  
+table {
+  align-self: center;
+  width: 50%;
+  border-collapse: collapse;
+  background: #fff;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 1px 1rem rgba(0, 70, 248, 0.26);
+  }
+  
+td, th {
+  padding: 8px;
+  text-align: left;
+  }
+  
+tr {
+  border: 2px solid rgb(224, 224, 224);
+  font-size: 20px;
+}
+  
+th {
+  background: #1F00DA;
+  font-weight: bold;
+  color: white;
+}
+
+@media only screen and (max-width:1024px) {
+  table {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width:441px) {
+  table {
+    width: 98%;
+  }
+
+  td, th {
+    padding: 5px;
+    }
+}

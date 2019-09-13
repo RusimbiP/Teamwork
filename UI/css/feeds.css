@@ -79,20 +79,6 @@ figure {
 .tablet {
   display: none;
 }
-/* tablet (portrait) ----------- */
-@media only screen and (max-width : 1024px) {
-  .tablet {
-    display: block;
-  }
-  .laptop {
-    display: none;
-  }
-
-  .section {
-    display: flex;
-    flex-direction: row;
-  }
-}
 
 /* responsive and iphone6/7/8 (portrait) ----------- */
 @media only screen and (max-width : 375px){
@@ -113,5 +99,34 @@ figure {
 @media only screen and (max-width : 441px) {
   .container{
     flex-direction: column;
+  }
+}
+
+/* tablet (portrait) ----------- */
+@media only screen and (min-width:766) and (max-width : 1027px) {
+  .tablet {
+    display: block;
+  }
+  .laptop {
+    display: none;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    justify-content: center;
+  }
+  
+}
+
+@media only screen and (width: 1024px) {
+  
+  figure, .article-content img {
+    width: 275px;
   }
 }
