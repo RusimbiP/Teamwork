@@ -47,10 +47,33 @@ html, body {
       width: 100%;
   }
   .menu a {
-      font-size: 16px;
-      border-bottom: 1px solid #EAEAEB;
+      font-size: 20px;
       margin: 0;
       padding:15px;
+      text-decoration: none;
+  }
+  .active {
+    background: none;
+  }
+  .logo {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  body {
+    padding: 3px;
+  }
+  .menu {
+      text-align: center;
+      width: 100%;
+      overflow-x: hidden;
+  }
+  .menu a {
+      font-size: 20px;
+      margin: 0;
+      padding: 6;
       text-decoration: none;
   }
   .active {
