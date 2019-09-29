@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "lint" : "./node_modules/.bin/eslint",
+    "lint": "./node_modules/.bin/eslint",
     "dev": "nodemon --exec babel-node server/start.js",
     "start": "node --exec babel-node server/start.js",
     "build": "mkdir dist && babel server -s -d dist",
@@ -25,8 +25,11 @@
   },
   "homepage": "https://github.com/RusimbiPatrick/Teamwork#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "dotenv": "^8.1.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
