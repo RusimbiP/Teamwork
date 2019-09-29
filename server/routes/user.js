@@ -6,7 +6,7 @@ import {
   checkDepartment, checkAddress
 }
 from '../helpers/validations';
-import errorHandler from '../Middleware/errorHandler';
+import errorHandler from '../middleware/errorHandler';
 import { Router } from 'express';
 
 
