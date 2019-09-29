@@ -85,15 +85,6 @@ html, body {
   }
 }
 
-@media only screen and (max-width: 375px){
-  .menu a {
-    font-size: 20px;
-    margin: 0;
-    padding: 6;
-    text-decoration: none;
-}
-
-}
 
 
 
