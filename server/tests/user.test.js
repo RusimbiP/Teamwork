@@ -263,6 +263,56 @@ describe('Tests for auth endpoints', ()=>{
           done();
         });
     });
-
+    
+    /***********************************login tests*****************************************************/  
+    it('Should successfully sign in a user and return a token', done =>{
+      chai
+        .request(app)
+        .post('/api/v1/auth/signin')
+        .send({
+        "email": "taken@teamwork.com",
+        "password": "password",
+        })
+        .end((err, res) =>{
+          expect(res).to.have.status(200);
+          expect(res.body).to.be.a('object');
+          expect(res.body.status).to.be.equal(200);
+          expect(res.body.message).to.be.equal("User is successfully logged in");
+          expect(res.body.token).to.be.a('string');
+          done();
+        });
+    });
+    it('Should return an error user tries to login with incorrect email or password', done =>{
+      chai
+        .request(app)
+        .post('/api/v1/auth/signin')
+        .send({
+        "email": "taken@teamwork.com",
+        "password": "kdnadfklk",
+        })
+        .end((err, res) =>{
+          expect(res).to.have.status(401);
+          expect(res.body).to.be.a('object');
+          expect(res.body.status).to.be.equal(401);
+          expect(res.body.error).to.be.equal("Wrong email and password combination");
+          done();
+        });
+    });
+    it('Should return an error when user tries to login with an un registered email', done =>{
+      chai
+        .request(app)
+        .post('/api/v1/auth/signin')
+        .send({
+        "email": "notregistered@teamwork.com",
+        "password": "nnnnnnn",
+        })
+        .end((err, res) =>{
+          expect(res).to.have.status(400);
+          expect(res.body).to.be.a('object');
+          expect(res.body.status).to.be.equal(400);
+          expect(res.body.error).to.be.equal("notregistered@teamwork.com is not registered");
+          done();
+        });
+    });
   })
 })
