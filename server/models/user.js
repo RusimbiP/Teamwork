@@ -7,7 +7,7 @@ class employee {
         "firstName": "cmc",
         "lastName": "PatricK",
         "email": "taken@teamwork.com",
-        "password": "password",
+        "password": "$2b$08$ByXvwUxxU47vy1tsKynZOecjXggYnsA4X9S3p2pWPKt1sRONu/P72",
         "gender": "male",
         "jobRole": "kkkkkkkkkkkkkkkkkkk",
         "department": "nkkn",
