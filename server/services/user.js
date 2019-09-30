@@ -21,7 +21,27 @@ class service {
     msg = `User created successfully`
     return{ status: 201, message:msg, token:token }
   }
+/****************** Handles Login ************************/
+  static login(credentials){ 
+    const { email, password } = credentials,
+    user = employee.registered(email);
+    if (!user) {
+      const err = `${email} is not registered`
+      return { status: 400, error:err }
+    };
+    
+    const hash = user.password,
+    truePass = Helper.comparePassword(hash, password,);
 
+    if (truePass === true) {
+      const { id, email} = user,
+      token = Tokenize(user),
+      msg = `User is successfully logged in`;
+      return{ status: 200, message:msg, token:token};
+    };
+    const err = `Wrong email and password combination`
+    return { status: 401, error:err }
+  }
 /********************* END **************************************** */
 }
 export default service;
