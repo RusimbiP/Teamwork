@@ -1,5 +1,5 @@
 import controller from '../controllers/user';
-const { create } = controller;
+const { create, login } = controller;
 import { 
   checkFirstname, checkLastName, checkEmail, 
   checkPassword, checkGender, checkJobRole,
@@ -25,7 +25,7 @@ errorHandler,
 create
 );
 
-
+userUrl.post('/signin', checkEmail(), checkPassword(), errorHandler, login);
 
 
 export default userUrl;

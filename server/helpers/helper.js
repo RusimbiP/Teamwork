@@ -6,6 +6,10 @@ const Helper = {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
   },
 
+  comparePassword(hashPassword, password) {
+    return bcrypt.compareSync(password, hashPassword);
+  },
+
   Tokenize(id) {
     const token = jwt.sign({
       employeeId: id

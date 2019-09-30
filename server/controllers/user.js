@@ -11,5 +11,10 @@
      const result = service.register(req.body)
      res.status(result.status).json(result)
    }
-
+/****************** Controls Login *************************/
+   static login(req, res) {
+     const result = service.login(req.body)
+     res.status(result.status).json(result)
+   }
+/***********************END *******************************/
  }
