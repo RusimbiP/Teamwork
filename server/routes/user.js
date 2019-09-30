@@ -1,12 +1,12 @@
 import controller from '../controllers/user';
-const { create } = controller;
+const { create, login } = controller;
 import { 
   checkFirstname, checkLastName, checkEmail, 
   checkPassword, checkGender, checkJobRole,
   checkDepartment, checkAddress
 }
 from '../helpers/validations';
-import errorHandler from '../Middleware/errorHandler';
+import errorHandler from '../middleware/errorHandler';
 import { Router } from 'express';
 
 
@@ -25,7 +25,7 @@ errorHandler,
 create
 );
 
-
+userUrl.post('/signin', checkEmail(), checkPassword(), errorHandler, login);
 
 
 export default userUrl;
