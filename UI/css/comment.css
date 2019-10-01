@@ -10,7 +10,7 @@
   top: 10px;
   left: 10px;
 }
-.comment-container .commentor .avatar {
+.comment-container .commentor .myavatar {
   border-radius: 50%;
   width: 40px;
 }
@@ -93,7 +93,7 @@
   margin-left: 80%;
 }
 
-.avatar {
+.myavatar {
   margin-top: 0px;
 }
 
@@ -107,4 +107,118 @@
     margin-left: 5%;
     width: 100%;
   }
+}
+
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  margin-left: -42px;
+  border-radius: 50%;
+}
+
+.v-avatar {
+  align-items: center;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.v-avatar img {
+  height: 50px; 
+  width: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+}
+
+.v-sheet {
+  display: block;
+  border-radius: 2px;
+  position: relative;
+}
+
+
+img {
+  border-style: none;
+}
+
+.headline {
+  font-weight: 400;
+  letter-spacing: normal ;
+  font-size: 24px ;
+  line-height: 32px ;
+}
+
+.name {
+  font-size: 20px ;
+  font-weight: 700;
+  line-height: 1 ;
+  letter-spacing: 0.02em ;
+}
+
+.caption {
+  font-size: 16px;
+  color: black;
+  margin-left: 8px;
+}
+
+.theme--light.v-card,
+.theme--light.v-sheet {
+  box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.027);
+  background-color: #fff;
+  border-color: #fff;
+  color: black;
+  margin-top: 20px;
+  padding-bottom: 5px;
+}
+
+
+.wrapper {
+  overflow: auto;
+}
+
+.comment {
+  overflow-y: auto;
+  margin-left: 12px;
+  margin-right: 16px;
+}
+
+.comment p {
+  font-size: 18px;
+  margin: 1px;
+}
+
+.displayName {
+  margin-left: 4px;
+  color: #0045F8;
+}
+
+.card,
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (max-width: 640px) {
+  .comment-container {
+    width: 90%;
+  }
+  .comments {
+    padding: 32px;
+  }
+}
+
+.new-comment-container{
+  margin-top: 30px;
+}
+
+.separator {
+  margin-top: 30px;
 }
