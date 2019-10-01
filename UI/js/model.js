@@ -1,6 +1,6 @@
 const modal = document.getElementById('myModal');
     const modalHeader = document.getElementsByClassName('modal-header');
-    const button = document.querySelectorAll('.btn');
+    const button = document.querySelectorAll('.delete');
     const span = document.getElementsByClassName("close")[0];
 
     const allButtons = Array.from(button);
