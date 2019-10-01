@@ -10,43 +10,110 @@ h1 {
   align-self: center;
 }
   
-table {
-  align-self: center;
-  width: 50%;
-  border-collapse: collapse;
-  background: #fff;
-  color: rgb(0, 0, 0);
-  box-shadow: 0 1px 1rem rgba(0, 70, 248, 0.26);
-  }
-  
-td, th {
-  padding: 8px;
-  text-align: left;
-  }
-  
-tr {
-  border: 2px solid rgb(224, 224, 224);
-  font-size: 20px;
+.edit {
+  background-color: #008833;
+  border: 1px solid #008833;
+  box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.137);
 }
-  
-th {
-  background: #1F00DA;
+
+.delete{
+  background-color: red;
+  border: 1px solid red;
+  box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.137);
+}
+
+/*modal*/
+
+#myModal{
+  display: none;
+}
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
   font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: red;
   color: white;
 }
 
-@media only screen and (max-width:1024px) {
-  table {
-    width: 95%;
-  }
+.modal-body {
+  padding: 2px 16px;
+  margin-left: 6px;
 }
 
-@media only screen and (max-width:441px) {
-  table {
-    width: 98%;
-  }
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #fff;
+  color: black;
+}
+.modal-footer a {
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex-direction: column;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  width: 98.6%;
+  margin: 5px;
+}
 
-  td, th {
-    padding: 5px;
-    }
+.yes {
+  background: red;
+}
+
+.No {
+  background: #008833;
 }

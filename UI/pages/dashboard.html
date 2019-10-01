@@ -4,8 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/feeds.css">
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <title>Dashbord</title>
 </head>
 <body>
@@ -21,7 +23,85 @@
     </div>
   </nav>
   <h1>Your Articles</h1>
-    <table>
+  <div class="container laptop">
+    <figure class="article">
+      <div class="article-content">
+        <img src="https://images.pexels.com/photos/1041063/pexels-photo-1041063.jpeg?cs=srgb&dl=abstract-photo-adobe-photoshop-manipulation-1041063.jpg&fm=jpg">
+        <small>
+          <p class="title">Image Manipulation</p> 
+        </small>
+      </div>
+      <figcaption>
+        <p class="preview">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has ....</p>  
+      </figcaption>
+      <form action="article.html">
+        <input class="button" type="submit" value="Read More" />
+    </form>
+    <div class="author">
+      <div class="profile">
+        <img src="../Assets/images/profile.jpg" alt="" class="avatar">
+        <span class="name">Rusimbi Patrick</span>
+      </div>
+      <span class="time">6 hours ago</span>
+    </div>
+
+    <div class="action-buttons">
+      <form action="./create.html">  
+        <button class="edit button" type="submit"><i class="fas fa-edit"></i> Edit</button>
+      </form>
+    <button class="delete button"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+    </div>
+
+    </figure>
+
+    <figure class="article">
+        <div class="article-content">
+          <img src="https://i0.wp.com/passionpassport.com/wp-content/uploads/2018/08/joseph-pearson-wide-angle-featured.jpg?fit=1068%2C641&ssl=1">
+          <small>
+            <p class="title">Wide angle photography</p> 
+          </small>
+        </div>
+        <figcaption>
+          <p class="preview">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has printing and ....</p>  
+        </figcaption>
+        <form action="article.html">
+          <input class="button" type="submit" value="Read More" />
+      </form>
+      <div class="author">
+        <div class="profile">
+          <img src="../Assets/images/profile.jpg" alt="" class="avatar">
+          <span class="name">Rusimbi Patrick</span>
+        </div>
+        <span class="time">6 hours ago</span>
+      </div>
+      <div class="action-buttons">
+        <form action="./create.html">  
+          <button class="edit button" type="submit"><i class="fas fa-edit"></i> Edit</button>
+        </form>
+      <button class="delete button"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+      </div>
+      </figure>
+    </div>
+       <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 id="title">Deleting?</h2>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete this article now?</p>
+          </div>
+          <div class="modal-footer">
+            <a class="yes" href="#">Yes</a>
+            <a class="No" href="#">No</a>
+          </div>
+        </div>
+  
+  </div>
+
+    <!-- <table>
     <thead>
     <tr>
       <th>ID</th>
@@ -96,7 +176,7 @@
     </td>
     </tr>
     </tbody>
-  </table>
+  </table> -->
 
 <script src="../js/model.js"></script>
 </body>
