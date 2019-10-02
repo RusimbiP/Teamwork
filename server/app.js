@@ -1,19 +1,3 @@
-  /**
-                                   .-"""-.
-                                / .===. \
-                                \/ 6 6 \/
-                                ( \___/ )
-    _________________________ooo__\_____/______________________________
-  /                                                                   \
-  | This project is Protected by Andela Honor code; third EPIC value |
-  \_______________________________________ooo_________________________/
-                                  |  |  |
-                                  |_ | _|
-                                  |  |  |
-                                  |__|__|
-                                  /-'Y'-\
-                                (__/ \__)
-  */
 import express from 'express';
 import userUrl from './routes/user';
 require('dotenv').config();
