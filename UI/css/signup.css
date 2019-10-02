@@ -6,14 +6,8 @@ body{
 .container {
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
-
-.vertical-line {
-  margin-top: 5vh;
-  width: 0.01px;
-  height: 90vh;
-  border: 1px solid #D0D0D0;
-} 
 
 .left {
   display: flex;
@@ -22,8 +16,7 @@ body{
   background-image:
   linear-gradient(to bottom, rgba(0, 39, 138, 0.664), rgba(0, 70, 248, 0.288)), 
   url('https://cdn.pixabay.com/photo/2016/05/28/07/06/writer-1421099_960_720.jpg');
-  width: 65%;
-  height: 400px;
+  width: 60%;
   background-size: cover;
 }
 
