@@ -122,3 +122,14 @@ h1 {
   margin-left: 43%;
   margin-top: 2%;
 }
+
+@media only screen and (max-width: 441px){
+  .edit-profile{
+    width: 43%;
+    margin-left: 20%;
+    margin-top: 7%;
+  }
+  h1{
+    margin-left: -22%;
+  }
+}
