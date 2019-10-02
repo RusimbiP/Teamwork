@@ -18,8 +18,13 @@ body{
 .left {
   display: flex;
   flex-direction: column;
-  width: 49%;
   padding-top: 20%; 
+  background-image:
+  linear-gradient(to bottom, rgba(0, 39, 138, 0.664), rgba(0, 70, 248, 0.288)), 
+  url('https://cdn.pixabay.com/photo/2016/05/28/07/06/writer-1421099_960_720.jpg');
+  width: 65%;
+  height: 400px;
+  background-size: cover;
 }
 
 .left p{
@@ -29,25 +34,25 @@ body{
 
 .logo {
   font-family: 'Noe Display Bold';
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
   color: white;
-  background: #0045F8;
-  padding: 15px 20px 15px 20px;
+  margin-top: -30%;
 }
 
 .slogan {
   font-family: 'Marat Sans Regular';
-  font-size: 20px;
-  color: grey;
+  font-size: 40px;
+  color: white;
 }
 
 .slogan span {
-  color: #0045F8;
+  color: white;
   font-weight: bold;
 }
 
 .signup{
+  margin-top: 10%;
   width: 49%;
   padding: 10px;
 }
@@ -135,10 +140,9 @@ input:focus{
   }
 
   form {
-    margin-top: 10%;
+    margin-top: 3%;
     width: 70%;
     max-height: 60vh;
-    overflow: auto;
   }
 }
 
