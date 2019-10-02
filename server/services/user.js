@@ -18,8 +18,15 @@ class service {
     
     const new1 = employee.save(input),
     token = Tokenize(new1.id),
+    mute = 'password',
+    response = Object.keys(new1).reduce((object, key) => {
+      if (key !== mute) {
+        object[key] = new1[key]
+      }
+      return object
+    }, {}),
     msg = `User created successfully`
-    return{ status: 201, message:msg, token:token }
+    return{ status: 201, message:msg, token:token, response }
   }
 /****************** Handles Login ************************/
   static login(credentials){ 
