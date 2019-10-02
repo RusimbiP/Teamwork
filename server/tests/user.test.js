@@ -72,7 +72,7 @@ describe('Tests for auth endpoints', ()=>{
           expect(res.body.status).to.be.equal(422);
           expect(res.body).to.have.keys('status', 'errors',);
           expect(res.body.errors).to.have.keys('body',);
-          expect(res.body.errors.body.firstName).to.be.equal("FirstName must be between 2 and 15 characters");
+          expect(res.body.errors.body.firstName).to.be.equal("firstName is missing");
           expect(res.body.errors).to.be.a('object')
           done();
         });
@@ -96,7 +96,7 @@ describe('Tests for auth endpoints', ()=>{
           expect(res.body.status).to.be.equal(422);
           expect(res.body).to.have.keys('status', 'errors',);
           expect(res.body.errors).to.have.keys('body',);
-          expect(res.body.errors.body.firstName).to.be.equal('FirstName can only contain alphabets ex: John');
+          expect(res.body.errors.body.firstName).to.be.equal('Firstname can only contain alphabets ex: John');
           expect(res.body.errors).to.be.a('object')
           done();
         });
@@ -119,7 +119,7 @@ describe('Tests for auth endpoints', ()=>{
           expect(res.body.status).to.be.equal(422);
           expect(res.body).to.have.keys('status', 'errors',);
           expect(res.body.errors).to.have.keys('body',);
-          expect(res.body.errors.body.lastName).to.be.equal("LastName must be between 2 and 15 characters");
+          expect(res.body.errors.body.lastName).to.be.equal("lastName is missing");
           done();
         });
     });
@@ -142,7 +142,7 @@ describe('Tests for auth endpoints', ()=>{
           expect(res.body.status).to.be.equal(422);
           expect(res.body).to.have.keys('status', 'errors',);
           expect(res.body.errors).to.have.keys('body',);
-          expect(res.body.errors.body.lastName).to.be.equal('LastName can only contain alphabets ex: Doe');
+          expect(res.body.errors.body.lastName).to.be.equal('Lastname can only contain alphabets ex: Doe');
           done();
         });
     });
@@ -165,7 +165,7 @@ describe('Tests for auth endpoints', ()=>{
           expect(res.body.status).to.be.equal(422);
           expect(res.body).to.have.keys('status', 'errors',);
           expect(res.body.errors).to.have.keys('body',);
-          expect(res.body.errors.body.email).to.be.equal('Provide a email address eg:some1@some.com');
+          expect(res.body.errors.body.email).to.be.equal('Not a valid email address like for example:some1@some.com');
           done();
         });
     });
@@ -211,7 +211,7 @@ describe('Tests for auth endpoints', ()=>{
           expect(res.body.status).to.be.equal(422);
           expect(res.body).to.have.keys('status', 'errors',);
           expect(res.body.errors).to.have.keys('body',);
-          expect(res.body.errors.body.password).to.be.equal('Password can be max 20 characters max');
+          expect(res.body.errors.body.password).to.be.equal('Password can contain max 20 characters');
           expect(res.body.errors).to.be.a('object')
           done();
         });
@@ -235,7 +235,7 @@ describe('Tests for auth endpoints', ()=>{
           expect(res.body.status).to.be.equal(422);
           expect(res.body).to.have.keys('status', 'errors',);
           expect(res.body.errors).to.have.keys('body',);
-          expect(res.body.errors.body.gender).to.be.equal('gender must be either Male or Female. So, Which one are you?');
+          expect(res.body.errors.body.gender).to.be.equal('gender must be alphabets and can either be Male or Female');
           expect(res.body.errors).to.be.a('object')
           done();
         });
@@ -257,8 +257,8 @@ describe('Tests for auth endpoints', ()=>{
           expect(res.body.status).to.be.equal(422);
           expect(res.body).to.have.keys('status', 'errors',);
           expect(res.body.errors).to.have.keys('body',);
-          expect(res.body.errors.body.department).to.be.equal('department must be between 4 and 50 characters');
-          expect(res.body.errors.body.jobRole).to.be.equal('jobRole must be between 4 and 50 characters');
+          expect(res.body.errors.body.department).to.be.equal('department is missing');
+          expect(res.body.errors.body.jobRole).to.be.equal('jobRole is missing');
           expect(res.body.errors).to.be.a('object')
           done();
         });
