@@ -15,10 +15,11 @@ html, body {
 
 .logo {
   font-family: 'Noe Display Bold';
-  font-size: 35px;
+  font-size: 25px;
   font-weight: bold;
   background: #0045F8;
   padding: 10px 15px 10px 15px;
+  padding-left: 7%;
 }
 
 .menu {
@@ -94,6 +95,129 @@ html, body {
 }
 
 }
+
+.toggle,
+[id^=drop] {
+    display: none;
+}
+
+#topNav {
+    font-family: 'Marat Sans Regular';
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #0045F8;
+}
+
+ #topNav :after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#topNav  ul {
+    float: right;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
+
+#topNav  ul li {
+    background-color: #0045F8;
+    margin: 0px;
+    display: inline-block;
+}
+
+#topNav  a {
+    display: block;
+    color: #FFF;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+#topNav  a:hover {
+    background-color: #008833;
+}
+
+@media (max-width :768px) {
+
+  #topNav  {
+        margin: 0;
+    }
+
+    #topNav  ul {
+        width: 100%;
+    }
+
+
+    .toggle+a,
+    .menu {
+        display: none;
+    }
+    
+    .mobile-logo {
+      font-family: 'Noe Display Bold';
+      margin-left: 5px;
+    }
+    .toggle {
+        display: block;
+        background-color: #0045F8;
+        padding: 14px 20px;
+        color: #FFF;
+        font-size: 30px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .toggle:hover {
+        background-color:#0045F8;
+    }
+
+    [id^=drop]:checked+ul {
+        display: block;
+    }
+
+    .nav {
+      display: none;
+    }
+
+    #topNav  ul li {
+        display: block;
+        width: 100%;
+    }
+
+    #topNav  a:hover {
+        background-color: #008833;
+    }
+}
+/* For Tablets */
+@media all and (min-width: 671px) {
+    #topNav {
+        display: none;
+    }
+}
+
+/* For big screens */
+@media all and (min-width: 1001px) {
+    #topNav {
+        display: none;
+    }
+}
+
+
+/* For Smartphones */
+@media all and (max-width: 670px) {
+     #topNav {
+         visibility: visible;
+     }
+
+     .logo {
+         margin-left: -10px;
+     }
+}
+
 
 
 
