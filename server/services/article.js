@@ -6,7 +6,7 @@ export default class service {
       return {
         status: 201,
         message: `Article succesfully created`,
-        written
+        data: written
       }
   }
 }

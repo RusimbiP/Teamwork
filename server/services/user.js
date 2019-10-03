@@ -26,7 +26,9 @@ class service {
       return object
     }, {}),
     msg = `User created successfully`
-    return{ status: 201, message:msg, token:token, response }
+    return{ status: 201, message:msg, data:{
+      token:token, response}
+     }
   }
 /****************** Handles Login ************************/
   static login(credentials){ 
@@ -44,7 +46,10 @@ class service {
       const { id, email} = user,
       token = Tokenize(user),
       msg = `User is successfully logged in`;
-      return{ status: 200, message:msg, token:token};
+      return{ status: 200, message:msg, data:{
+        token:token
+      } 
+    };
     };
     const err = `Wrong email and password combination`
     return { status: 401, error:err }

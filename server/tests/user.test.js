@@ -28,7 +28,7 @@ describe('Tests for auth endpoints', ()=>{
           expect(res.body).to.be.a('object');
           expect(res.body.status).to.be.equal(201);
           expect(res.body.message).to.be.equal("User created successfully");
-          expect(res.body.token).to.be.a('string');
+          expect(res.body.data.token).to.be.a('string');
           done();
         });
     });
@@ -276,9 +276,10 @@ describe('Tests for auth endpoints', ()=>{
         .end((err, res) =>{
           expect(res).to.have.status(200);
           expect(res.body).to.be.a('object');
+          expect(res.body.data).to.be.a('object');
           expect(res.body.status).to.be.equal(200);
           expect(res.body.message).to.be.equal("User is successfully logged in");
-          expect(res.body.token).to.be.a('string');
+          expect(res.body.data.token).to.be.a('string');
           done();
         });
     });

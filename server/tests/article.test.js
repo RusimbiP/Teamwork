@@ -27,7 +27,7 @@ describe('tests for all article endpoints', () =>{
         password: 'password'
       })
       .end((err, res) => {
-        const { token } = res.body;
+        const { token } = res.body.data;
         userToken = token;
         done(err);
       });
@@ -39,19 +39,12 @@ describe('tests for all article endpoints', () =>{
       .request(app)
       .post('/api/v1/articles')
       .set('x-access-token', `${userToken}`)
-      .send({
-          "title": "  ",
-          "subtitle": "   ",
-          "article": "This is a body. As i am writing this, a new Javascript framwork is being rolled out"
-      })
+      .send(data)
       .end((err, res) => {
        expect(res).to.have.status(201);
        expect(res.body.status).to.be.equal(201);
        expect(res.body.message).to.be.equal("Article succesfully created");
        expect(res.body).to.be.an('object');
-       
-       expect(res.body.written.title).to.be.equal('Untitled');
-       expect(res.body.written.subtitle).to.be.equal('');
        done(err);
       })
     });
@@ -71,10 +64,10 @@ describe('tests for all article endpoints', () =>{
        expect(res.body).to.have.keys(
          'status',
          'message',
-         'written'
+         'data'
        );
-       expect(res.body.written).to.be.an('object');
-       expect(res.body.written).to.have.keys(
+       expect(res.body.data).to.be.an('object');
+       expect(res.body.data).to.have.keys(
          'id',
          'owner',
          'title',
