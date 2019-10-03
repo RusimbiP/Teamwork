@@ -9,33 +9,33 @@ const { Tokenize, comparePassword } = Helper;
 */
 
 class service {
-/** **************** Handles Registration *****************/
+/** **************** Handles Registration **************** */
   static register(input) {
     const taken = employee.registered(input.email);
     const err = `${input.email} is already taken`;
     if (taken) {
       return { status: 409, error: err };
     }
-    
+
     const new1 = employee.save(input);
     const token = Tokenize(new1.id);
     const mute = 'password';
     const newUser = Object.keys(new1).reduce((object, key) => {
       if (key !== mute) {
-        object[key] = new1[key]
+        object[key] = new1[key];
       }
-      return object
+      return object;
     }, {});
     const msg = 'User created successfully';
     return {
- status: 201,
-message: msg,
-data: {
-      token, newUser },
+      status: 201,
+      message: msg,
+      data: {
+        token, newUser },
     };
   }
 
-  /** **************** Handles Login ************************/
+  /** **************** Handles Login *********************** */
   static login(credentials) {
     const { email, password } = credentials;
     const user = employee.registered(email);
@@ -43,7 +43,7 @@ data: {
       const err = `${email} is not registered`;
       return { status: 404, error: err };
     }
-    
+
     const hash = user.password;
     const truePass = Helper.comparePassword(hash, password);
 
@@ -52,11 +52,11 @@ data: {
       const token = Tokenize(user);
       const msg = 'User is successfully logged in';
       return {
- status: 200,
-message: msg,
-data: {
-        token,
-      },
+        status: 200,
+        message: msg,
+        data: {
+          token,
+        },
       };
     }
     const err = 'Wrong email and password combination';
