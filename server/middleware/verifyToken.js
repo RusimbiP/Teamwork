@@ -13,7 +13,7 @@ const verifyToken = (req, res, next) => {
     if (!registered) {
       return res.status(403).send({
         status: 403,
-        error: 'You can only create an article with your registered email!',
+        error: 'You cannot use an unregistered email for that!',
       });
     }
       req.authorId = decoded.employeeId.id;
