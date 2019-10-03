@@ -30,7 +30,14 @@ class article {
     return this.articles.find((art) => art.id == id);
   }
 
-  
+  edit(id, input) {
+    const one = this.retriveArticle(id);
+    const index = this.articles.indexOf(one);
+    this.articles[index].title = input.title || one.title;
+    this.articles[index].subtitle = input.subtitle || one.subtitle;
+    this.articles[index].article = input.article || one.article;
+    return this.articles[index];
+  }
 }
 export default new article();
 
