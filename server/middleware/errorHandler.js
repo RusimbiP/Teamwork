@@ -15,7 +15,7 @@ const errorHandler = (req, res, next) => {
 
   const validationResults = validationResult(req).array({ onlyFirstError: true });
 
-  validationResults.forEach(resultObject => errorFormatter(resultObject));
+  validationResults.forEach((resultObject) => errorFormatter(resultObject));
 
   if (Object.keys(errors).length > 0) {
     res.status(422).json({ status: 422, errors });

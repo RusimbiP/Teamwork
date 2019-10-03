@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 const Helper = {
   hashPassword(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
   },
 
   comparePassword(hashPassword, password) {
@@ -12,20 +12,20 @@ const Helper = {
 
   Tokenize(id) {
     const token = jwt.sign({
-      employeeId: id
+      employeeId: id,
     },
-      process.env.SECRET, { expiresIn: '7d' }
+    process.env.SECRET, { expiresIn: '7d' },
     );
     return token;
   },
-  
-  capitalizeFirstLetter(s){
-    return s.charAt(0).toUpperCase() + s.slice(1)
+
+  capitalizeFirstLetter(s) {
+    return s.charAt(0).toUpperCase() + s.slice(1);
   },
-  
-  lowerCase (s) {
-       return s.toLowerCase()
-  }
-}
+
+  lowerCase(s) {
+    return s.toLowerCase();
+  },
+};
 
 export default Helper;

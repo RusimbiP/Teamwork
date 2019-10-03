@@ -1,9 +1,9 @@
 import { check } from 'express-validator';
-import Helper from "./helper";
+import Helper from './helper';
 
 const { capitalizeFirstLetter, lowerCase } = Helper;
 
-export const checkFirstname =_=>[
+export const checkFirstname = (_) => [
   check('firstName')
     .exists().withMessage('firstName is missing')
     .not()
@@ -18,10 +18,10 @@ export const checkFirstname =_=>[
     .blacklist(' ')
     .trim()
     .stripLow()
-    .customSanitizer(value => capitalizeFirstLetter(value)),
-]
+    .customSanitizer((value) => capitalizeFirstLetter(value)),
+];
 
-export const checkLastName =_=>[
+export const checkLastName = (_) => [
   check('lastName')
     .exists().withMessage('lastName is missing')
     .not()
@@ -36,10 +36,10 @@ export const checkLastName =_=>[
     .blacklist(' ')
     .trim()
     .stripLow()
-    .customSanitizer(value => capitalizeFirstLetter(value)),
-]
+    .customSanitizer((value) => capitalizeFirstLetter(value)),
+];
 
-export const checkEmail =_=> [
+export const checkEmail = (_) => [
   check('email')
     .exists().withMessage('Email is missing')
     .not()
@@ -49,24 +49,24 @@ export const checkEmail =_=> [
     )
     .isEmail()
     .withMessage('Not a valid email address like for example:some1@some.com')
-    .customSanitizer(value => lowerCase(value))
+    .customSanitizer((value) => lowerCase(value))
     .blacklist(' '),
-]
-export const checkPassword =_=> [
+];
+export const checkPassword = (_) => [
   check('password')
-   .exists().withMessage('password is missing')
-   .not()
-   .isEmpty({ ignore_whitespace: true })
-   .withMessage(
+    .exists().withMessage('password is missing')
+    .not()
+    .isEmpty({ ignore_whitespace: true })
+    .withMessage(
       'password cannot be blank',
     )
-   .isLength({ min: 6})
-   .withMessage("Password must contain at least 6 characters")
-   .isLength({ max: 20 })
-   .withMessage("Password can contain max 20 characters"),
- ]
+    .isLength({ min: 6 })
+    .withMessage('Password must contain at least 6 characters')
+    .isLength({ max: 20 })
+    .withMessage('Password can contain max 20 characters'),
+];
 
- export const checkGender =_=> [
+export const checkGender = (_) => [
   check('gender')
     .exists().withMessage('gender is missing')
     .not()
@@ -80,12 +80,12 @@ export const checkPassword =_=> [
     )
     .trim()
     .blacklist(' ')
-    .customSanitizer(value => lowerCase(value))
+    .customSanitizer((value) => lowerCase(value))
     .isIn(['male', 'female'])
     .withMessage('gender must be either Male or Female'),
-]
+];
 
-export const checkJobRole =_=>[
+export const checkJobRole = (_) => [
   check('jobRole')
     .exists().withMessage('jobRole is missing')
     .not()
@@ -99,10 +99,10 @@ export const checkJobRole =_=>[
     .withMessage('jobRole must be between 4 and 50 characters')
     .blacklist(' ')
     .trim()
-    .stripLow()
-]
+    .stripLow(),
+];
 
-export const checkDepartment =_=>[
+export const checkDepartment = (_) => [
   check('department')
     .exists().withMessage('department is missing')
     .not()
@@ -116,10 +116,10 @@ export const checkDepartment =_=>[
     .withMessage('department must be between 4 and 50 characters')
     .blacklist(' ')
     .trim()
-    .stripLow()
-]
+    .stripLow(),
+];
 
-export const checkAddress =_=>[
+export const checkAddress = (_) => [
   check('address')
     .exists().withMessage('address is missing')
     .not()
@@ -137,5 +137,5 @@ export const checkAddress =_=>[
     .withMessage('address must be between 5 and 30 characters')
     .blacklist(' ')
     .trim()
-    .stripLow()
-]
+    .stripLow(),
+];

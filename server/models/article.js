@@ -6,8 +6,8 @@ class article {
 
   publish(input, authorId) {
     const newArticle = {
-      id: this.articles.length +1,
-      owner:authorId,
+      id: this.articles.length + 1,
+      owner: authorId,
       title: input.title.trim() || 'Untitled',
       subtitle: input.subtitle.trim(),
       article: input.article,
