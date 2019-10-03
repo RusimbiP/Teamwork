@@ -11,6 +11,9 @@ export default class controller {
     res.status(result.status).json(result);
   }
 
-  
+  static edit(req, res) {
+    const result = service.edit(req.params.articleId, req.body, req.authorId);
+    res.status(result.status).json(result);
+  }
 }
 
