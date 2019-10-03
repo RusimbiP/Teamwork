@@ -4,14 +4,11 @@ class comment {
     this.comments = [];
   }
 
-  write(input, articleId, authorId, title, subtitle, article) {
+  write(input, articleId, authorId) {
     const newComment = {
       id: this.comments.length + 1,
-      owner: authorId,
+      authorId,
       articleId,
-      articleTitle: title,
-      article,
-      subtitle,
       comment: input.comment,
       createdDate: new Date(),
     };
