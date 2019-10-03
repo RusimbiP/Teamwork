@@ -13,7 +13,7 @@
     "dev": "nodemon --exec babel-node server/start.js",
     "clean": "rimraf dist ",
     "build": "npm run clean && mkdir  dist && babel server -s -D -d dist",
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register ./server/tests --exit",
+    "test": "nyc --reporter=html --reporter=text mocha --timeout 10000 --require @babel/register ./server/tests --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -43,7 +43,7 @@
     "@babel/node": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/register": "^7.6.2",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.0.3",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "coveralls": "^3.0.6",
