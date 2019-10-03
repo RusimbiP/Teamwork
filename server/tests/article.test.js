@@ -14,9 +14,24 @@ const data = {
 };
 
 describe('tests for all article endpoints', () =>{
-  const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZUlkIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJjbWMiLCJsYXN0TmFtZSI6IlBhdHJpY0siLCJlbWFpbCI6InRha2VuQHRlYW13b3JrLmNvbSIsInBhc3N3b3JkIjoiJDJiJDA4JEJ5WHZ3VXh4VTQ3dnkxdHNLeW5aT2VjalhnZ1luc0E0WDlTM3AycFdQS3Qxc1JPTnUvUDcyIiwiZ2VuZGVyIjoibWFsZSIsImpvYlJvbGUiOiJra2tra2tra2tra2tra2tra2trIiwiZGVwYXJ0bWVudCI6Im5ra24iLCJhZGRyZXNzIjoiS0cgMzQ0IFN0In0sImlhdCI6MTU3MDA2MTMxMywiZXhwIjoxNTcwNjY2MTEzfQ.lxPt4KGiDAan3U8PVdOK7eLRnIntGylHNgI14Mls7QY';
+  let userToken;
   const unregistered = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZUlkIjp7ImlkIjoyLCJmaXJzdE5hbWUiOiJObiIsImxhc3ROYW1lIjoiUGF0cmljSyIsImVtYWlsIjoibmV4dDFAdGVhbXdvcmsuY29tIiwicGFzc3dvcmQiOiIkMmIkMDgkV1lrNmNGdmxKWmNCWFVLNEplb1ZNZUx4RWVscmpzTzFySmlxamdVQjM1MUVCN2xtRkU5QUMiLCJnZW5kZXIiOiJtYWxlIiwiam9icm9sZSI6Imtra2tra2tra2tra2tra2tra2siLCJkZXBhcnRtZW50IjoibmtrbiIsImFkZHJlc3MiOiJLRzM0NFN0In0sImlhdCI6MTU3MDA2MTcyMiwiZXhwIjoxNTcwNjY2NTIyfQ.AWbvGQhZSPia0lPHEy2be55v_WGRknol7ZWEEcm3fU4';
   const invalid = 'eyJhbGciOiJIUz4230[74902350I1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZUlkIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJjbWMiLCJXJ0bWVudCI6Im5ra24iLCJhZGRyZXNzIjoiS0cgMzQ0IFN0In0sImlhdCI6MTU3MDA2MTMxMywiZXhwIjoxNTcwNjY2MTEzfQ.lxPt4KGiDAan3U8PVdOK7eLRnIntGylHNgI14Mls7QY';
+
+  before(done => {
+    chai
+      .request(app)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'taken@teamwork.com',
+        password: 'password'
+      })
+      .end((err, res) => {
+        const { token } = res.body;
+        userToken = token;
+        done(err);
+      });
+  });
 
   describe(' POST ap1/v1/articles', () =>{
     it('should succesfully create a new article if valid details are provided', done => {
