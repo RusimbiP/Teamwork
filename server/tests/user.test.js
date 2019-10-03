@@ -68,8 +68,8 @@ describe('Tests for auth endpoints', () => {
           'address': 'KG 344 St',
         })
         .end((err, res) => {
-          expect(res).to.have.status(422);
-          expect(res.body.status).to.be.equal(422);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.firstName).to.be.equal('firstName is missing');
@@ -92,8 +92,8 @@ describe('Tests for auth endpoints', () => {
           'address': 'KG 344 St',
         })
         .end((err, res) => {
-          expect(res).to.have.status(422);
-          expect(res.body.status).to.be.equal(422);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.firstName).to.be.equal('Firstname can only contain alphabets ex: John');
@@ -115,8 +115,8 @@ describe('Tests for auth endpoints', () => {
           address: 'KG 344 St',
         })
         .end((err, res) => {
-          expect(res).to.have.status(422);
-          expect(res.body.status).to.be.equal(422);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.lastName).to.be.equal('lastName is missing');
@@ -138,8 +138,8 @@ describe('Tests for auth endpoints', () => {
           address: 'KG 344 St',
         })
         .end((err, res) => {
-          expect(res).to.have.status(422);
-          expect(res.body.status).to.be.equal(422);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.lastName).to.be.equal('Lastname can only contain alphabets ex: Doe');
@@ -161,8 +161,8 @@ describe('Tests for auth endpoints', () => {
           'address': 'KG 344 St',
         })
         .end((err, res) => {
-          expect(res).to.have.status(422);
-          expect(res.body.status).to.be.equal(422);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.email).to.be.equal('Not a valid email address like for example:some1@some.com');
@@ -184,8 +184,8 @@ describe('Tests for auth endpoints', () => {
           'address': 'KG 344 St',
         })
         .end((err, res) => {
-          expect(res).to.have.status(422);
-          expect(res.body.status).to.be.equal(422);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.password).to.be.equal('Password must contain at least 6 characters');
@@ -207,8 +207,8 @@ describe('Tests for auth endpoints', () => {
           address: 'KG 344 St',
         })
         .end((err, res) => {
-          expect(res).to.have.status(422);
-          expect(res.body.status).to.be.equal(422);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.password).to.be.equal('Password can contain max 20 characters');
@@ -231,8 +231,8 @@ describe('Tests for auth endpoints', () => {
           'address': 'KG 344 St',
         })
         .end((err, res) => {
-          expect(res).to.have.status(422);
-          expect(res.body.status).to.be.equal(422);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.gender).to.be.equal('gender must be alphabets and can either be Male or Female');
@@ -253,8 +253,8 @@ describe('Tests for auth endpoints', () => {
           'address': 'KG 344 St',
         })
         .end((err, res) => {
-          expect(res).to.have.status(422);
-          expect(res.body.status).to.be.equal(422);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.department).to.be.equal('department is missing');
@@ -292,9 +292,9 @@ describe('Tests for auth endpoints', () => {
           password: 'kdnadfklk',
         })
         .end((err, res) => {
-          expect(res).to.have.status(401);
+          expect(res).to.have.status(404);
           expect(res.body).to.be.a('object');
-          expect(res.body.status).to.be.equal(401);
+          expect(res.body.status).to.be.equal(404);
           expect(res.body.error).to.be.equal('Wrong email and password combination');
           done();
         });
@@ -308,9 +308,9 @@ describe('Tests for auth endpoints', () => {
           'password': 'nnnnnnn',
         })
         .end((err, res) => {
-          expect(res).to.have.status(400);
+          expect(res).to.have.status(404);
           expect(res.body).to.be.a('object');
-          expect(res.body.status).to.be.equal(400);
+          expect(res.body.status).to.be.equal(404);
           expect(res.body.error).to.be.equal('notregistered@teamwork.com is not registered');
           done();
         });

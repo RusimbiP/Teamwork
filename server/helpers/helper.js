@@ -24,7 +24,10 @@ const Helper = {
   },
 
   lowerCase(s) {
-    return s.toLowerCase();
+    if(s){
+      return s.toLowerCase();
+    };
+    return 'Email is required'
   },
 };
 

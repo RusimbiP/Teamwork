@@ -20,7 +20,7 @@ class service {
     const new1 = employee.save(input);
     const token = Tokenize(new1.id);
     const mute = 'password';
-    const response = Object.keys(new1).reduce((object, key) => {
+    const newUser = Object.keys(new1).reduce((object, key) => {
       if (key !== mute) {
         object[key] = new1[key]
       }
@@ -31,7 +31,7 @@ class service {
  status: 201,
 message: msg,
 data: {
-      token, response },
+      token, newUser },
     };
   }
 
@@ -41,7 +41,7 @@ data: {
     const user = employee.registered(email);
     if (!user) {
       const err = `${email} is not registered`;
-      return { status: 400, error: err };
+      return { status: 404, error: err };
     }
     
     const hash = user.password;
@@ -60,7 +60,7 @@ data: {
       };
     }
     const err = 'Wrong email and password combination';
-    return { status: 401, error: err };
+    return { status: 404, error: err };
   }
 /** ******************* END **************************************** */
 }

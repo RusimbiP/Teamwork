@@ -18,7 +18,7 @@ const errorHandler = (req, res, next) => {
   validationResults.forEach((resultObject) => errorFormatter(resultObject));
 
   if (Object.keys(errors).length > 0) {
-    res.status(422).json({ status: 422, errors });
+    res.status(400).json({ status: 400, errors });
   } else {
     next();
   }

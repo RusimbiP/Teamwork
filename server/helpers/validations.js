@@ -151,7 +151,6 @@ export const checkComment = (_) => [
 
 export const checkId = (_) => [
   check('articleId')
-    .exists().withMessage('article id is missing')
     .isNumeric()
     .withMessage('article id must be a number'),
 ];
