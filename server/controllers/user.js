@@ -7,16 +7,16 @@
 import service from '../services/user';
 
 export default class controller {
-/** **************** Controls Registration *******************/
+/** **************** Controls Registration ****************** */
   static create(req, res) {
     const result = service.register(req.body);
     res.status(result.status).json(result);
   }
 
-  /****************** Controls Login ************************ */
+  /** **************** Controls Login ************************ */
   static login(req, res) {
     const result = service.login(req.body);
     res.status(result.status).json(result);
   }
-/** *********************END *******************************/
+/** *********************END ****************************** */
 }
