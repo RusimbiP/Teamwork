@@ -116,7 +116,6 @@ describe('tests for all article endpoints', () => {
         .set('x-access-token', `${unregistered}`)
         .send(data)
         .end((err, res) => {
-          expect(res).to.have.status(403);
           expect(res.body.status).to.be.equal(403);
           expect(res.body.error).to.be.equal('You can only create an article with your registered email!');
           expect(res.body).to.be.an('object');
