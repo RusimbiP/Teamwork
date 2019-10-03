@@ -69,7 +69,7 @@ describe('tests for comment and article endpoints', () => {
           expect(res.body.data).to.be.an('object');
           expect(res.body.data).to.have.keys(
             'id',
-            'owner',
+            'authorId',
             'title',
             'subtitle',
             'article',
@@ -154,6 +154,28 @@ describe('tests for comment and article endpoints', () => {
           expect(res.body.status).to.be.equal(404);
           expect(res.body.error).to.be.equal('Article not found. You can not comment on it');
           expect(res.body).to.be.an('object');
+          done(err);
+        });
+    });
+
+    it('should return one specific article', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/articles/1')
+        .set('x-access-token', `${userToken}`)
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body.status).to.be.equal(200);
+          expect(res.body).to.have.keys(
+            'status',
+            'data'
+          );
+          expect(res.body.data).to.be.an('object');
+          expect(res.body.data.comments).to.be.an('array');
+          expect(res.body.data).to.have.keys(
+            'Article',
+            'comments'
+          );
           done(err);
         });
     });
