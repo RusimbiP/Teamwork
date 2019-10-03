@@ -17,7 +17,6 @@ export const checkFirstname = (_) => [
     .withMessage('Firstname must be between 2 and 15 characters')
     .blacklist(' ')
     .trim()
-    .stripLow()
     .customSanitizer((value) => capitalizeFirstLetter(value)),
 ];
 
@@ -35,7 +34,6 @@ export const checkLastName = (_) => [
     .withMessage('Lastname must be between 2 and 15 characters')
     .blacklist(' ')
     .trim()
-    .stripLow()
     .customSanitizer((value) => capitalizeFirstLetter(value)),
 ];
 
@@ -98,8 +96,7 @@ export const checkJobRole = (_) => [
     .isLength({ min: 4, max: 50 })
     .withMessage('jobRole must be between 4 and 50 characters')
     .blacklist(' ')
-    .trim()
-    .stripLow(),
+    .trim(),
 ];
 
 export const checkDepartment = (_) => [
@@ -115,8 +112,8 @@ export const checkDepartment = (_) => [
     .isLength({ min: 4, max: 50 })
     .withMessage('department must be between 4 and 50 characters')
     .blacklist(' ')
-    .trim()
-    .stripLow(),
+    .trim(),
+
 ];
 
 export const checkAddress = (_) => [
@@ -135,7 +132,26 @@ export const checkAddress = (_) => [
     .withMessage('Your address should look like KG 167 St or KN 7 Ave')
     .isLength({ min: 5, max: 50 })
     .withMessage('address must be between 5 and 30 characters')
+    .trim(),
+];
+
+export const checkComment = (_) => [
+  check('comment')
+    .exists().withMessage('comment is missing')
+    .not()
+    .isEmpty({ ignore_whitespace: true })
+    .withMessage(
+      'comment cannot be blank',
+    )
+    .isLength({ min: 1, max: 1000 })
+    .withMessage('comment must be between 5 and 1000 characters')
     .blacklist(' ')
-    .trim()
-    .stripLow(),
+    .trim(),
+];
+
+export const checkId = (_) => [
+  check('articleId')
+    .exists().withMessage('article id is missing')
+    .isNumeric()
+    .withMessage('article id must be a number'),
 ];
