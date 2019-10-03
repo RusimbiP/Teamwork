@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
     "prestart": "npm run -s build",
-    "start": "node dist/start.js",
+    "start": "npm run prestart && node dist/start.js",
     "dev": "nodemon --exec babel-node server/start.js",
     "clean": "rimraf dist ",
     "build": "npm run clean && mkdir  dist && babel server -s -D -d dist",
