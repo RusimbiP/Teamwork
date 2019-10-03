@@ -30,6 +30,10 @@ class article {
     return this.articles.find((art) => art.id == id);
   }
 
+  retriveAll() {
+    return this.articles;
+  }
+
   edit(id, input) {
     const one = this.retriveArticle(id);
     const index = this.articles.indexOf(one);
