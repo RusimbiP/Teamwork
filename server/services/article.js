@@ -54,4 +54,11 @@ export default class service {
     const erased = article.delete(id);
     return { status: 204, erased };
   }
+
+  static getAll() {
+    const articles = article.retriveAll();
+    const latest = articles.reverse()
+    return { status:200, data:latest}
+  }
+
 }
