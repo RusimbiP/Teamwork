@@ -1,4 +1,4 @@
-import service from '../Services/article';
+import service from '../services/article';
 
 export default class controller {
   static write(req, res){
