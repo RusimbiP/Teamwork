@@ -1,5 +1,5 @@
+import { Router } from 'express';
 import controller from '../controllers/user';
-const { create, login } = controller;
 import { 
   checkFirstname, checkLastName, checkEmail, 
   checkPassword, checkGender, checkJobRole,
@@ -7,22 +7,22 @@ import {
 }
 from '../helpers/validations';
 import errorHandler from '../middleware/errorHandler';
-import { Router } from 'express';
+const { create, login } = controller;
 
 
 const userUrl = Router();
 
 
-userUrl.post('/signup', checkFirstname(), 
-checkLastName(), 
-checkEmail(),
-checkGender(), 
-checkJobRole(),
-checkDepartment(), 
-checkAddress(), 
-checkPassword(), 
-errorHandler, 
-create
+userUrl.post('/signup', checkFirstname(),
+  checkLastName(),
+  checkEmail(),
+  checkGender(),
+  checkJobRole(),
+  checkDepartment(),
+  checkAddress(),
+  checkPassword(),
+  errorHandler,
+  create,
 );
 
 userUrl.post('/signin', checkEmail(), checkPassword(), errorHandler, login);
