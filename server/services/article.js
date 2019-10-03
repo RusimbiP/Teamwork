@@ -24,5 +24,20 @@ export default class service {
     };
   }
 
-  
+  static edit(id, input, authorId) {
+    const oneArticle = article.retriveArticle(id);
+    if (!oneArticle) {
+      return {
+        status: 404,
+        error: 'Article not found. You can not edit a non-existent.',
+      };
+    }
+
+    if (oneArticle.authorId !== authorId) {
+      const err = 'Sorry, You cannot edit an article you do not own';
+      return { status: 403, error: err };
+    }
+    const editedArticle = article.edit(id, input);
+    return { status: 200, data: editedArticle };
+  }
 }
