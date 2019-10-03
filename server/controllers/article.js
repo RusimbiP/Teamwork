@@ -20,5 +20,10 @@ export default class controller {
     const result = service.delete(req.params.articleId, req.authorId);
     res.status(result.status).json(result);
   }
+
+  static getAll(req, res) {
+    const result = service.getAll();
+    res.status(result.status).json(result);
+  }
 }
 
