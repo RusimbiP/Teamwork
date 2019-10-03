@@ -38,6 +38,13 @@ class article {
     this.articles[index].article = input.article || one.article;
     return this.articles[index];
   }
+
+  delete(id) {
+    const article = this.retriveArticle(id);
+    const index = this.articles.indexOf(article);
+    this.articles.splice(index, 1);
+    return {};
+  }
 }
 export default new article();
 

@@ -4,12 +4,13 @@ import { checkId } from '../helpers/validations';
 import errorHandler from '../middleware/errorHandler';
 import verifyToken from '../middleware/verifyToken';
 
-const { write, getOne, edit } = controller;
+const { write, getOne, edit, deleteArticle } = controller;
 const articleUrl = Router();
 
 articleUrl.post('/', verifyToken, write);
 articleUrl.get('/:articleId', checkId (), errorHandler, verifyToken, getOne);
 articleUrl.patch('/:articleId',checkId (), errorHandler, verifyToken, edit);
+articleUrl.delete('/:articleId',checkId (), errorHandler, verifyToken, deleteArticle);
 
 export default articleUrl;
 
