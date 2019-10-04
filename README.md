@@ -56,16 +56,15 @@ $ npm test
 
 ## API ENDPOINT ROUTES
 
-| METHOD | ROUTE | DESCRIPTION | ACCESS |
-|--------|----------------|-------------|-----------------|
-|  POST  | api/v1/auth/signup | User Registration | Public |
-|  POST  | api/v1/auth/login  | User Login | Public |
-|  POST  | api/v1/articles | Publish an article | Private |
-|  GET  | api/v1/articles/feed | Retrieve published articles | Private |
-|  GET  | api/v1/articles/:articleId  | Retrieve A Specific published article | Private |
-|  DELETE  | api/v1/articles/:articleId  | Delete A Specific published article | Private |
-|  PATCH  | api/v1/articles/:articleId  | Edit A Specific published article | Private |
-|  POST   | api/v1/articles/:articleId/comments | comment on  A Specific published article| Private |
+
+`POST  | api/v1/auth/signup | User Registration | Public `
+`POST  | api/v1/auth/login  | User Login | Public `
+`POST  | api/v1/articles | Publish an article | Private `
+`GET  | api/v1/articles/feed | Retrieve published articles | Private `
+`GET  | api/v1/articles/:articleId  | Retrieve A Specific published article | Private `
+`DELETE  | api/v1/articles/:articleId  | Delete A Specific published article | Private `
+`PATCH  | api/v1/articles/:articleId  | Edit A Specific published article | Private `
+`POST   | api/v1/articles/:articleId/comments | comment on  A Specific published article| Private `
 
 
 ## DEVELOPER
