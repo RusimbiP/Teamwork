@@ -18,7 +18,7 @@
 - **Code Climate** - Continuous Integration Code Quality
 
 - **Heroku** - Deployment. [Visit The App](https://tmwork.herokuapp.com/)
-- **Documentation** - API documentation. [Visit Documention]https://documenter.getpostman.com/view/9027211/SVtR1py6?version=latest#2f625c76-76e5-45f2-9d01-a39d53bd9ead)
+- **Documentation** - API documentation. [Visit](ocumention]https://documenter.getpostman.com/view/9027211/SVtR1py6?version=latest#2f625c76-76e5-45f2-9d01-a39d53bd9ead)
 
 - **GIT** - Version Control System
 
