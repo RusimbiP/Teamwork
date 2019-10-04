@@ -36,7 +36,11 @@
     "express": "^4.17.1",
     "express-validator": "^6.2.0",
     "jsonwebtoken": "^8.5.1",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/register": "^7.6.2",
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
