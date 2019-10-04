@@ -18,4 +18,15 @@ describe('Test index.js', () => {
       done();
     });
   });
+
+  it('should return error when route is not found', (done) => {
+    chai
+      .request(app)
+      .post('/api/v1/articles/notfound')
+      .end((err, res) => {
+        expect(res).to.have.status(404);
+        expect(res.body.error).to.be.equal('Oh! snap! There is not such a page. Double check your url.');
+        done(err);
+      });
+  });
 });

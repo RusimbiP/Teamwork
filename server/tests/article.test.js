@@ -245,6 +245,53 @@ describe('tests for comment and article endpoints', () => {
         });
     });
 
+    it('should delete an article', (done) => {
+      chai
+        .request(app)
+        .delete('/api/v1/articles/1')
+        .set('x-access-token', `${userToken}`)
+        .end((err, res) => {
+          expect(res).to.have.status(204);
+          done(err);
+        });
+    });
+
+    it('should not delete an article that does not exist', (done) => {
+      chai
+        .request(app)
+        .delete('/api/v1/articles/1000')
+        .set('x-access-token', `${userToken}`)
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.body.error).to.be.equal('Article not found.You can not delete it.');
+          done(err);
+        });
+    });
+
+    it('should return all articles', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/articles/feed')
+        .set('x-access-token', `${userToken}`)
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          done(err);
+        });
+    });
+
+    it('should return error when article is not found', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/articles/100')
+        .set('x-access-token', `${userToken}`)
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.body.error).to.be.equal('Article not found');
+          done(err);
+        });
+    });
+
+
 
     // it('should not update an article if user is not the owner', (done) => {
     //   chai
