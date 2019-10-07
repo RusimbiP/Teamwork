@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import controller from '../controllers/article';
+import controller from '../../controllers/article';
 import { checkId } from '../helpers/validations';
 import errorHandler from '../middleware/errorHandler';
 import verifyToken from '../middleware/verifyToken';
