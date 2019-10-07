@@ -5,19 +5,20 @@
   "main": "index.js",
   "directories": {
     "test": "tests"
-  },
+  }, 
   "scripts": {
-    "lint": "./node_modules/.bin/eslint",
     "start": "nodemon --exec babel-node server/v2/start.js",
     "clean": "rimraf dist ",
     "babel-build": "babel server -d dist && node dist/v2/start",
     "build": "npm run clean && npm run babel-build",
     "heroku-postbuild": "echo skip post-build",
-    "test": "nyc --reporter=html --reporter=text mocha --timeout 10000 --require @babel/register ./server/v2/tests --exit",
+    "pre-test": "cross-env NODE_ENV=test npm run down && cross-env NODE_ENV=test npm run up && cross-env NODE_ENV=test npm run populate-test-data",
+    "test": "npm run pre-test && cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 10000 --require @babel/register ./server/v2/tests --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "up": "babel-node server/v2/db/migrations/migrateUp.js",
     "down": "babel-node server/v2/db/migrations/migrateDown.js",
-    "seed": "npm run up && babel-node server/v2/db/migrations/seed.js",
+    "seed": "babel-node server/v2/db/migrations/seed.js",
+    "populate-test-data" : "babel-node server/v2/db/dummyData.js",
     "migrations": "npm run down && npm run up && npm run seed"
   },
   "repository": {

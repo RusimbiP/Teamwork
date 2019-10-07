@@ -3,7 +3,13 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-let conn = conn = process.env.DATABASE_URL;
+let conn;
+
+if (process.env.NODE_ENV == 'test') {
+  conn = process.env.DATABASE_URL_TEST;
+} else {
+  conn = process.env.DATABASE_URL;
+}
 
 const pool = new Pool({ connectionString: conn });
 pool.on('connect', () => {
