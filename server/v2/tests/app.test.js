@@ -29,16 +29,4 @@ describe('Test index.js', () => {
         done(err);
       });
   });
-
-  it('should return 500 on internal swerver error ', (done) => {
-    chai
-      .request(app)
-      .post('/api/v1/articles/notfound')
-      .end((err, res) => {
-        expect(res).to.have.status(500);
-        expect(res.body.error).to.be.equal('Oh! snap! There is not such a page. Double check your url.');
-        done(err);
-      });
-  });
-
 });
