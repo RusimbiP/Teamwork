@@ -8,12 +8,12 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
-    "start": "nodemon --exec babel-node server/start.js",
+    "start": "nodemon --exec babel-node server/v2/start.js",
     "clean": "rimraf dist ",
-    "babel-build": "babel server -d dist && node dist/start",
+    "babel-build": "babel server -d dist && node dist/v2/start",
     "build": "npm run clean && npm run babel-build",
     "heroku-postbuild": "echo skip post-build",
-    "test": "nyc --reporter=html --reporter=text mocha --timeout 10000 --require @babel/register ./server/tests --exit",
+    "test": "nyc --reporter=html --reporter=text mocha --timeout 10000 --require @babel/register ./server/v2/tests --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
