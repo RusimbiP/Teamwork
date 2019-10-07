@@ -12,7 +12,7 @@ if (process.env.NODE_ENV == 'test') {
 
 const pool = new Pool({ connectionString: conn });
 pool.on('connect', () => {
-  console.log('We connected to the database');
+  console.log('upward migration. creating tables...');
 });
 
 const createTables = async () => {
@@ -54,7 +54,7 @@ const createTables = async () => {
   await pool.query(usersTable);
   await pool.query(articlesTable);
   await pool.query(commentsTable);
-
+  console.log('Done.')
 };
 
 createTables();

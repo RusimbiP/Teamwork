@@ -13,7 +13,7 @@ if (process.env.NODE_ENV == 'test') {
 
 const pool = new Pool({ connectionString: conn });
 pool.on('connect', () => {
-  console.log('We connected to the database');
+  console.log('downward migration. droping tables...');
 });
 
 const dropTable = [
@@ -26,6 +26,7 @@ const dropTables = async () => {
   for (const i of dropTable) {
     await pool.query(i);
   }
+  console.log('Done.')
 };
 
 dropTables();
