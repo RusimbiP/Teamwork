@@ -17,7 +17,7 @@
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "up": "babel-node server/v2/db/migrations/migrateUp.js",
     "down": "babel-node server/v2/db/migrations/migrateDown.js",
-    "seed" : "npm run up && babel-node server/v2/db/migrations/seed.js",
+    "seed": "npm run up && babel-node server/v2/db/migrations/seed.js",
     "migrations": "npm run down && npm run up && npm run seed"
   },
   "repository": {
@@ -40,6 +40,7 @@
     "@babel/register": "^7.6.2",
     "babel-preset-env": "^1.7.0",
     "bcrypt": "^3.0.6",
+    "cross-env": "^6.0.3",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-validator": "^6.2.0",
