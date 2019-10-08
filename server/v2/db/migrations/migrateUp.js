@@ -1,16 +1,5 @@
-import { Pool } from 'pg';
-import dotenv from 'dotenv';
+import { pool } from '../../config/connection';
 
-dotenv.config();
-let conn;
-
-if (process.env.NODE_ENV == 'test') {
-  conn = process.env.DATABASE_URL_TEST;
-} else {
-  conn = process.env.DATABASE_URL;
-}
-
-const pool = new Pool({ connectionString: conn });
 pool.on('connect', () => {
   console.log('upward migration. creating tables...');
 });

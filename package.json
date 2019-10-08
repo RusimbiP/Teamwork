@@ -5,7 +5,7 @@
   "main": "index.js",
   "directories": {
     "test": "tests"
-  }, 
+  },
   "scripts": {
     "start": "nodemon --exec babel-node server/v2/start.js",
     "clean": "rimraf dist ",
@@ -13,12 +13,12 @@
     "build": "npm run clean && npm run babel-build",
     "heroku-postbuild": "echo skip post-build",
     "pre-test": "cross-env NODE_ENV=test npm run down && cross-env NODE_ENV=test npm run up && cross-env NODE_ENV=test npm run populate-test-data",
-    "test": "npm run pre-test && cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 10000 --require @babel/register ./server/v2/tests --exit",
+    "test": "npm run pre-test && cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 1000000  --require babel-polyfill --require @babel/register ./server/v2/tests --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "up": "babel-node server/v2/db/migrations/migrateUp.js",
     "down": "babel-node server/v2/db/migrations/migrateDown.js",
     "seed": "babel-node server/v2/db/migrations/seed.js",
-    "populate-test-data" : "babel-node server/v2/db/dummyData.js",
+    "populate-test-data": "babel-node server/v2/db/dummyData.js",
     "migrations": "npm run down && npm run up && npm run seed"
   },
   "repository": {
@@ -37,8 +37,10 @@
     "@babel/node": "^7.6.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.2",
     "@babel/register": "^7.6.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "bcrypt": "^3.0.6",
     "cross-env": "^6.0.3",
