@@ -13,20 +13,12 @@ app.use('/api/v2/auth', userUrl);
 
 app.get('/', (req, res) => res.send('Welcome to Teamwork'));
 
-app.use((req, res, next) => {
-  const error = new Error('Oh! snap! There is not such a page. Double check your url.');
-  error.status = 404;
-  next(error);
-});
-
-app.use((error, req, res, next) => {
-  res.status(error.status || 500);
-  res.json({
-    status: error.status || 500,
-    error: error.message
+app.use((req, res) => { 
+  res.status(404).send({
+    error:'Oh! snap! There is not such a page. Double check your url.'
   });
-  next();
-});
+ });
+
 
 
 export default app;
