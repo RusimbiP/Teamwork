@@ -13,7 +13,7 @@
     "build": "npm run clean && npm run babel-build",
     "heroku-postbuild": "echo skip post-build",
     "pre-test": "cross-env NODE_ENV=test npm run down && cross-env NODE_ENV=test npm run up && cross-env NODE_ENV=test npm run populate-test-data",
-    "test": "npm run pre-test && cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha  --require babel-polyfill --require @babel/register ./server/v2/tests --exit",
+    "test": "npm run pre-test && cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 10000  --require babel-polyfill --require @babel/register ./server/v2/tests --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "up": "babel-node server/v2/db/migrations/migrateUp.js",
     "down": "babel-node server/v2/db/migrations/migrateDown.js",
