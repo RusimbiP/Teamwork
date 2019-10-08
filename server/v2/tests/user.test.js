@@ -258,15 +258,12 @@ describe('Tests for auth endpoints', () => {
           done();
         });
     });
-
+  describe('POST api/v2/auth/signin', () => {
     it('Should successfully sign in a user and return a token', (done) => {
       chai
         .request(app)
         .post('/api/v2/auth/signin')
-        .send({
-          email,
-          password
-        })
+        .send(data)
         .end((err, res) => {
           expect(res).to.have.status(200);
           expect(res.body.status).to.be.equal(200);
@@ -291,6 +288,6 @@ describe('Tests for auth endpoints', () => {
           done();
         });
     });
-
   });
+  })
 });
