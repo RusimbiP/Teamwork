@@ -14,7 +14,8 @@ if(process.env.NODE_ENV == 'test'){
    }); 
 } 
 
+
 export const runQuery = async (queries, params = []) => {
   const outcome = await pool.query(queries, params);
-  return result.rows || outcome;
+  return outcome;
 };
