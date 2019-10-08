@@ -5,6 +5,9 @@ import chaiHttp from 'chai-http';
 import app from '../app';
 
 import { mockUser } from '../db/mockData';
+const { 
+  firstname, lastname, email, password, gender, department, jobRole, address 
+} = mockUser;
 
 const { expect } = chai;
 const data = {
@@ -20,33 +23,33 @@ const data = {
 chai.use(chaiHttp);
 describe('Tests for auth endpoints', () => {
   describe('POST api/v2/auth/signup', () => {
-    it('Should successfully sign up a user and return a token', (done) => {
-      chai
-        .request(app)
-        .post('/api/v2/auth/signup')
-        .send(data)
-        .end((err, res) => {
-          expect(res).to.have.status(201);
-          expect(res.body).to.be.a('object');
-          expect(res.body.status).to.be.equal(201);
-          expect(res.body.message).to.be.equal('User created successfully');
-          expect(res.body.data.token).to.be.a('string');
-          done();
-        });
-    });
-    it('Should return an error if a user tries to sign up without an already existing email', (done) => {
-      chai
-        .request(app)
-        .post('/api/v2/auth/signup')
-        .send(mockUser)
-        .end((err, res) => {
-          expect(res).to.have.status(409);
-          expect(res.body.status).to.be.equal(409);
-          expect(res.body).to.have.keys('status', 'error');
-          expect(res.body.error).to.be.equal('This email is already taken');
-          done();
-        });
-    });
+     it('Should successfully sign up a user and return a token', (done) => {
+       chai
+         .request(app)
+         .post('/api/v2/auth/signup')
+         .send(data)
+         .end((err, res) => {
+           expect(res).to.have.status(201);
+           expect(res.body).to.be.a('object');
+           expect(res.body.status).to.be.equal(201);
+           expect(res.body.message).to.be.equal('User created successfully');
+           expect(res.body.data.token).to.be.a('string');
+           done();
+         });
+     });
+     it('Should return an error if a user tries to sign up without an already existing email', (done) => {
+       chai
+         .request(app)
+         .post('/api/v2/auth/signup')
+         .send(mockUser)
+         .end((err, res) => {
+           expect(res).to.have.status(409);
+           expect(res.body.status).to.be.equal(409);
+           expect(res.body).to.have.keys('status', 'error');
+           expect(res.body.error).to.be.equal('This email is already taken');
+           done();
+         });
+     });
     it('Should return an error if a user tries to sign up without a firstname', (done) => {
       chai
         .request(app)
@@ -162,53 +165,53 @@ describe('Tests for auth endpoints', () => {
           done();
         });
     });
-    it('Should return an error if a user tries to sign up when password is less than 6 characters', (done) => {
-      chai
-        .request(app)
-        .post('/api/v2/auth/signup')
-        .send({
-          'firstname': 'Patrick',
-          'lastname': 'Apps',
-          'email': 'valid@teamwork.com',
-          'password': '123',
-          'gender': 'male',
-          'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-          'department': 'nkkn',
-          'address': 'KG 344 St'
-        })
-        .end((err, res) => {
-          expect(res).to.have.status(400);
-          expect(res.body.status).to.be.equal(400);
-          expect(res.body).to.have.keys('status', 'errors');
-          expect(res.body.errors).to.have.keys('body');
-          expect(res.body.errors.body.password).to.be.equal('Password must contain at least 6 characters');
-          done();
-        });
-    });
-    // it('Should return an error if a user tries to sign up when password is greater than 20 characters', (done) => {
+    // it('Should return an error if a user tries to sign up when password is less than 6 characters', (done) => {
     //   chai
     //     .request(app)
     //     .post('/api/v2/auth/signup')
     //     .send({
-    //       "firstname": "Rusimbi",
-    //       "lastname": "PatricK",
-    //       "email": "ajd@teamwodrk.com",
-    //       "password": "password",
-    //       "gender": "Male",
-    //       "jobrole" : "Accountant",
-    //       "department": "Finance",
-    //       "address": "KG 444 St"
+    //       'firstname': 'Patrick',
+    //       'lastname': 'Apps',
+    //       'email': 'valid@teamwork.com',
+    //       'password': '123',
+    //       'gender': 'male',
+    //       'jobRole': 'kkkkkkkkkkkkkkkkkkk',
+    //       'department': 'nkkn',
+    //       'address': 'KG 344 St'
     //     })
     //     .end((err, res) => {
     //       expect(res).to.have.status(400);
     //       expect(res.body.status).to.be.equal(400);
     //       expect(res.body).to.have.keys('status', 'errors');
     //       expect(res.body.errors).to.have.keys('body');
-    //       expect(res.body.errors.data.body.password).to.be.equal('Password can contain max 20 characters');
-    //       expect(res.body.errors).to.be.a('object');
+    //       expect(res.body.errors.body.password).to.be.equal('Password must contain at least 6 characters');
     //       done();
     //     });
     // });
+    //  it('Should return an error if a user tries to sign up when password is greater than 20 characters', (done) => {
+    //    chai
+    //      .request(app)
+    //      .post('/api/v2/auth/signup')
+    //      .send({
+    //        "firstname": "Rusimbi",
+    //        "lastname": "PatricK",
+    //        "email": "ajd@teamwodrk.com",
+    //        "password": "password",
+    //        "gender": "Male",
+    //        "jobrole" : "Accountant",
+    //        "department": "Finance",
+    //        "address": "KG 444 St"
+    //      })
+    //      .end((err, res) => {
+    //        expect(res).to.have.status(400);
+    //        expect(res.body.status).to.be.equal(400);
+    //        expect(res.body).to.have.keys('status', 'errors');
+    //        expect(res.body.errors).to.have.keys('body');
+    //        expect(res.body.errors.data.body.password).to.be.equal('Password can contain max 20 characters');
+    //        expect(res.body.errors).to.be.a('object');
+    //        done();
+    //      });
+    //  });
     it('Should return an error if a user tries to sign up with a forged gender', (done) => {
       chai
         .request(app)
@@ -255,5 +258,39 @@ describe('Tests for auth endpoints', () => {
           done();
         });
     });
+
+    it('Should successfully sign in a user and return a token', (done) => {
+      chai
+        .request(app)
+        .post('/api/v2/auth/signin')
+        .send({
+          email,
+          password
+        })
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body.status).to.be.equal(200);
+          expect(res.body.message).to.be.equal('User is successfully logged in');
+          expect(res.body.data.token).to.be.a('string');
+          done();
+        });
+    });
+    it('Should return an error user tries to login with incorrect email or password', (done) => {
+      chai
+        .request(app)
+        .post('/api/v2/auth/signin')
+        .send({
+          'email': 'mmll@teamwork.com',
+          'password': 'kdnadfklk',
+        })
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.be.a('object');
+          expect(res.body.status).to.be.equal(400);
+          expect(res.body.error).to.be.equal('Wrong email and password combination');
+          done();
+        });
+    });
+
   });
 });
