@@ -5,7 +5,8 @@ import {
   checkPassword, checkGender, checkJobRole,
   checkDepartment, checkAddress }from '../helpers/validations';
 import errorHandler from '../middleware/errorHandler';
-const { create } = controller;
+import { check } from 'express-validator';
+const { create, login } = controller;
 
 
 const userUrl = Router();
@@ -24,4 +25,5 @@ checkFirstname(),
   create
 );
 
+userUrl.post('/signin', checkEmail(), checkPassword(), errorHandler, login)
 export default userUrl;
