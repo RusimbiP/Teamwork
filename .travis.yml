@@ -3,8 +3,13 @@ language: node_js
 node_js: "stable"
 
 install: npm install
+
+services:
+  - postgresql
+
 before_script:
   - psql -c 'create database teamwork_test;' -U postgres
+
 scripts: npm test
 
 after_script: npm run coveralls
