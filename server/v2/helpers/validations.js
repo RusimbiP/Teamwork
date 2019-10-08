@@ -1,4 +1,4 @@
-import { check } from 'express_validator';
+import { check } from 'express-validator';
 import Helper from './helper';
 
 const { capitalizeFirstLetter, lowerCase } = Helper;
