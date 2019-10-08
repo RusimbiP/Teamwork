@@ -6,14 +6,14 @@ import app from '../app';
 
 const { expect } = chai;
 const data = {
-  'firstname': 'cmc',
-  'lastname': 'PatricK',
-  'email': 'some@teamwork.com',
-  'password': 'password',
-  'gender': 'male',
-  'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-  'department': 'nkkn',
-  'address': 'KG 344 St',
+  "firstname": "rusimbi",
+	"lastname": "pastrick",
+	"email": "email@gg.com",
+	"password": "password",
+	"gender": "male",
+	"department": "IbbT",
+	"jobrole": "technichian",
+	"address" : "KG 167 St"
 };
 chai.use(chaiHttp);
 describe('Tests for auth endpoints', () => {
@@ -37,14 +37,14 @@ describe('Tests for auth endpoints', () => {
         .request(app)
         .post('/api/v2/auth/signup')
         .send({
-          'firstname': 'cmc',
-          'lastname': 'PatricK',
-          'email': 'taken@teamwork.com',
-          'password': 'password',
-          'gender': 'male',
-          'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-          'department': 'nkkn',
-          'address': 'KG 344 St',
+          "firstname": "rusimbi",
+          "lastname": "pastrick",
+          "email": "taken@teamwork.com",
+          "password": "password",
+          "gender": "male",
+          "department": "IbbT",
+          "jobrole": "technichian",
+          "address" : "KG 167 St"
         })
         .end((err, res) => {
           expect(res).to.have.status(409);
@@ -240,14 +240,14 @@ describe('Tests for auth endpoints', () => {
           done();
         });
     });
-    it('Should return an error if a user tries to sign up without department and job role', (done) => {
+    it('Should return an error if a user tries to sign up without department', (done) => {
       chai
         .request(app)
         .post('/api/v2/auth/signup')
         .send({
-          firstname: 'Patrick',
-          lastname: 'Apps',
-          email: 'valid@teamwork.com',
+          'firstname': 'Patrick',
+          'lastname': 'Apps',
+          'email': 'valid@teamwork.com',
           'password': '1234567',
           'gender': 'male',
           'address': 'KG 344 St'
@@ -258,7 +258,6 @@ describe('Tests for auth endpoints', () => {
           expect(res.body).to.have.keys('status', 'errors');
           expect(res.body.errors).to.have.keys('body');
           expect(res.body.errors.body.department).to.be.equal('department is missing');
-          expect(res.body.errors.body.jobRole).to.be.equal('jobRole is missing');
           expect(res.body.errors).to.be.a('object');
           done();
         });

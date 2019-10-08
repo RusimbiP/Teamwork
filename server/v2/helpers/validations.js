@@ -84,8 +84,8 @@ export const checkGender = _ => [
 ];
 
 export const checkJobRole = _ => [
-  check('jobRole')
-    .exists().withMessage('jobRole is missing')
+  check('jobrole')
+    .exists().withMessage('jobrole is missing')
     .not()
     .isEmpty({ ignore_whitespace: true })
     .withMessage(
@@ -118,21 +118,22 @@ export const checkDepartment = _ => [
 
 export const checkAddress = _ => [
   check('address')
-    .exists().withMessage('address is missing')
-    .not()
-    .isEmpty({ ignore_whitespace: true })
-    .withMessage(
-      'address cannot be blank',
-    )
-    .matches('[A_Z]{2}')
-    .withMessage('The first two characters of address be capital letters ie: KG 167 st')
-    .matches('[ ]{1}[0_9]{3,}')
-    .withMessage('Now add a  one space and your street address(1 character minimum) ex: KG 1')
-    .matches('[A_Z]{2}[ ]{1}[0_9]{1,}[ ]{1}[A_Z]{1}[a_z]{1,2}$')
-    .withMessage('Your address should look like KG 167 St or KN 7 Ave')
-    .isLength({ min: 5, max: 50 })
-    .withMessage('address must be between 5 and 30 characters')
-    .trim(),
+  .exists().withMessage('address is missing')
+  .not()
+  .isEmpty({ ignore_whitespace: true })
+  .withMessage(
+    'address cannot be blank',
+  )
+  .matches('[A-Z]{2}')
+  .withMessage('The first two characters of address be capital letters ie: KG 167 st')
+  .matches('[ ]{1}[0-9]{3,}')
+  .withMessage('Now add a  one space and your street address(1 character minimum) ex: KG 1')
+  .matches('[A-Z]{2}[ ]{1}[0-9]{1,}[ ]{1}[A-Z]{1}[a-z]{1,2}$')
+  .withMessage('Your address should look like KG 167 St or KN 7 Ave')
+  .isLength({ min: 5, max: 50 })
+  .withMessage('address must be between 5 and 30 characters')
+  .blacklist(' ')
+  .trim()
 ];
 
 export const checkComment =_=> [
