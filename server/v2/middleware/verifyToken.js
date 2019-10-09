@@ -6,7 +6,10 @@ class Auth{
   static async verifyToken(req, res, next) {
     const token = req.headers['x-access-token'];
     if(!token) {
-      return res.status(401).send({ error: 'Token is not provided' });
+      return res.status(401).send({ 
+        status: 401,
+        error: 'Token is not provided'
+       });
     }
     try {
       const decoded = await jwt.verify(token, process.env.SECRET);
