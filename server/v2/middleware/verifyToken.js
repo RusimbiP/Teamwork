@@ -8,7 +8,7 @@ class Auth{
     if(!token) {
       return res.status(401).send({ 
         status: 401,
-        error: 'Token is not provided'
+        error: 'No token provided.'
        });
     }
     try {
