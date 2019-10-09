@@ -4,22 +4,11 @@ import chaiHttp from 'chai-http';
 
 import app from '../app';
 
-import { mockUser } from '../db/mockData';
-const { 
-  firstname, lastname, email, password, gender, department, jobRole, address 
-} = mockUser;
+import { mockUser, newUser } from '../db/mockData';
+
 
 const { expect } = chai;
-const data = {
-  "firstname": "rusimbi",
-	"lastname": "pastrick",
-	"email": "email@gg.com",
-	"password": "password",
-	"gender": "male",
-	"department": "IbbT",
-	"jobrole": "technichian",
-	"address" : "KG 167 St"
-};
+
 chai.use(chaiHttp);
 describe('Tests for auth endpoints', () => {
   describe('POST api/v2/auth/signup', () => {
@@ -27,7 +16,7 @@ describe('Tests for auth endpoints', () => {
        chai
          .request(app)
          .post('/api/v2/auth/signup')
-         .send(data)
+         .send(newUser)
          .end((err, res) => {
            expect(res).to.have.status(201);
            expect(res.body).to.be.a('object');
@@ -217,7 +206,7 @@ describe('Tests for auth endpoints', () => {
       chai
         .request(app)
         .post('/api/v2/auth/signin')
-        .send(data)
+        .send(newUser)
         .end((err, res) => {
           expect(res).to.have.status(200);
           expect(res.body.status).to.be.equal(200);

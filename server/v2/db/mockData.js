@@ -9,6 +9,17 @@ export const mockUser = {
 	"address" : "KG 167 St"
 };
 
+export const newUser = {
+	"firstname": "rusimbi",
+	"lastname": "pastrick",
+	"email": "email@gg.com",
+	"password": "password",
+	"gender": "male",
+	"department": "IbbT",
+	"jobrole": "technichian",
+	"address" : "KG 167 St"
+}
+
 export const unregisteredEmail = "iam@unregistered.com";
 export const mockArticle = {
 	"title": "       ",
