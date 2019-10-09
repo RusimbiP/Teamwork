@@ -3,7 +3,7 @@ import chaiHttp from 'chai-http';
 import Helper from '../helpers/helper';
 const { Tokenize } = Helper;
 import app from '../app';
-import { mockUser, newUser, mockArticle, unregisteredEmail } from '../db/mockData';
+import { mockUser, newUser, invalidToken, mockArticle, unregisteredEmail } from '../db/mockData';
 
 
 const { expect } = chai;
@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 
 describe('tests for comment and article endpoints', () => {
   let userToken = Tokenize(mockUser.email);
-  const invalid = 'eyJhbGciOiJIUz4230XBsb3llZUlkIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJjbWMiLCJXJ0bWVudCI6Im5ra24iLCJhZGRyZXNzIjoiS0cgMzQ0IFN0In0sImlhdCI6MTU3MDA2MTMxMywiZXhwIjoxNTcwNjY2MTEzfQ.lxPt4KGiDAan3U8PVdOK7eLRnIntGylHNgI14Mls7QY';
+  
   const unregUser = Tokenize(unregisteredEmail);
 
   describe(' POST ap1/v2/articles', () => {
@@ -72,7 +72,7 @@ describe('tests for comment and article endpoints', () => {
       chai
         .request(app)
         .post('/api/v2/articles')
-        .set('x-access-token', `${invalid}`)
+        .set('x-access-token', `${invalidToken}`)
         .send(mockArticle)
         .end((err, res) => {
           expect(res).to.have.status(401);

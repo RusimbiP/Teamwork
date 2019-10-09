@@ -20,6 +20,8 @@ export const newUser = {
 	"address" : "KG 167 St"
 }
 
+export const invalidToken = 'eyJhbGciOiJIUz4230XBsb3llZUlkIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJjbWMiLCJXJ0bWVudCI6Im5ra24iLCJhZGRyZXNzIjoiS0cgMzQ0IFN0In0sImlhdCI6MTU3MDA2MTMxMywiZXhwIjoxNTcwNjY2MTEzfQ.lxPt4KGiDAan3U8PVdOK7eLRnIntGylHNgI14Mls7QY';
+
 export const unregisteredEmail = "iam@unregistered.com";
 export const mockArticle = {
 	"title": "       ",
