@@ -11,25 +11,9 @@ chai.use(chaiHttp);
 
 
 describe('tests for comment and article endpoints', () => {
-  let userToken;
+  let userToken = Tokenize(mockUser.email);
   const invalid = 'eyJhbGciOiJIUz4230XBsb3llZUlkIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJjbWMiLCJXJ0bWVudCI6Im5ra24iLCJhZGRyZXNzIjoiS0cgMzQ0IFN0In0sImlhdCI6MTU3MDA2MTMxMywiZXhwIjoxNTcwNjY2MTEzfQ.lxPt4KGiDAan3U8PVdOK7eLRnIntGylHNgI14Mls7QY';
   const unregUser = Tokenize(unregisteredEmail);
-    
-  before((done) => {
-    chai
-      .request(app)
-      .post('/api/v2/auth/signin')
-      .send({
-        "email": "taken@teamwork.com",
-	      "password": "password"
-      })
-      .end((err, res) => {
-        console.log(res.body);
-        const { token } = res.body.data;
-        userToken = token;
-        done(err);
-      });
-  });
 
   describe(' POST ap1/v2/articles', () => {
     it('should successfully create a new article if valid details are provided', (done) => {
