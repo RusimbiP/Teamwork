@@ -20,8 +20,7 @@ describe('tests for comment and article endpoints', () => {
       .post('/api/v2/auth/signin')
       .send(mockUser)
       .end((err, res) => {
-        const { token } = res.body.data;
-        userToken = token;
+        userToken  = res.body.data.token;
         done(err);
       });
   });
