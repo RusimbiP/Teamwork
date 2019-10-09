@@ -12,7 +12,6 @@ before_script:
 
 scripts: 
   - npm test
-  - psql -c `select * from users;`
 
 
 after_script: npm run coveralls
