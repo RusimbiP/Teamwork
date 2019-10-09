@@ -28,7 +28,10 @@ class service {
       const err = `This email is already taken`
       return { status: 409, error:err }
     }
-    return { status:400, error }
+    return { 
+      status:503, 
+      error: 'service unavailable because it is under mantainance. Try again later'
+    }
   }
   }
 
@@ -53,7 +56,10 @@ class service {
         }
       }
     } catch(error){
-      return { status:400, error }
+      return { 
+        status:503,
+         error: 'service unavailable because it is under mantainance. Try again later'
+        }
     }
   }
 }
