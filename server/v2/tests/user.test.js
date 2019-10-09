@@ -5,7 +5,10 @@ import chaiHttp from 'chai-http';
 import app from '../app';
 
 import { mockUser, newUser } from '../db/mockData';
-
+import { unregisteredEmail } from '../db/mockData';
+const { 
+  firstname, lastname, email, password, gender, department, jobrole, address
+} = newUser;
 
 const { expect } = chai;
 
@@ -44,13 +47,13 @@ describe('Tests for auth endpoints', () => {
         .request(app)
         .post('/api/v2/auth/signup')
         .send({
-          'lastname': 'PatricK',
-          'email': 'taken@teamwork.com',
-          'password': 'password',
-          'gender': 'male',
-          'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-          'department': 'nkkn',
-          'address': 'KG 344 St'
+          lastname,
+          email,
+          password,
+          gender,
+          jobrole,
+          department,
+          address
         })
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -68,13 +71,13 @@ describe('Tests for auth endpoints', () => {
         .post('/api/v2/auth/signup')
         .send({
           'firstname': 'Pat11',
-          'lastname': 'Patrick',
-          'email': 'taken@teamwork.com',
-          'password': 'password',
-          'gender': 'male',
-          'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-          'department': 'nkkn',
-          'address': 'KG 344 St'
+          lastname,
+          email,
+          password,
+          gender,
+          jobrole,
+          department,
+          address
         })
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -91,13 +94,13 @@ describe('Tests for auth endpoints', () => {
         .request(app)
         .post('/api/v2/auth/signup')
         .send({
-          'firstname': 'Patrick',
-          'email': 'taken@teamwork.com',
-          'password': 'password',
-          'gender': 'male',
-          'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-          'department': 'nkkn',
-          'address': 'KG 344 St'
+          firstname,
+          email,
+          password,
+          gender,
+          jobrole,
+          department,
+          address
         })
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -113,14 +116,14 @@ describe('Tests for auth endpoints', () => {
         .request(app)
         .post('/api/v2/auth/signup')
         .send({
-          'firstname': 'Patrick',
+          firstname,
           'lastname': '1111',
-          'email': 'taken@teamwork.com',
-          'password': 'password',
-          'gender': 'male',
-          'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-          'department': 'nkkn',
-          'address': 'KG 344 St'
+          email,
+          password,
+          gender,
+          jobrole,
+          department,
+          address
         })
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -136,14 +139,14 @@ describe('Tests for auth endpoints', () => {
         .request(app)
         .post('/api/v2/auth/signup')
         .send({
-          'firstname': 'Patrick',
-          'lastname': 'Apps',
+          firstname,
+          lastname,
           'email': 'invalidteamwork.com',
-          'password': 'password',
-          'gender': 'male',
-          'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-          'department': 'nkkn',
-          'address': 'KG 344 St'
+          password,
+          gender,
+          jobrole,
+          department,
+          address
         })
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -160,14 +163,14 @@ describe('Tests for auth endpoints', () => {
         .request(app)
         .post('/api/v2/auth/signup')
         .send({
-          'firstname': 'Patrick',
-          'lastname': 'Apps',
-          'email': 'valid@teamwork.com',
-          'password': '1234567',
+          firstname,
+          lastname,
+          email,
+          password,
           'gender': 'new gender',
-          'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-          'department': 'nkkn',
-          'address': 'KG 344 St'
+          jobrole,
+          department,
+          address
         })
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -184,12 +187,13 @@ describe('Tests for auth endpoints', () => {
         .request(app)
         .post('/api/v2/auth/signup')
         .send({
-          'firstname': 'Patrick',
-          'lastname': 'Apps',
-          'email': 'valid@teamwork.com',
-          'password': '1234567',
-          'gender': 'male',
-          'address': 'KG 344 St'
+          firstname,
+          lastname,
+          email,
+          password,
+          gender,
+          jobrole,
+          address
         })
         .end((err, res) => {
           expect(res).to.have.status(400);
