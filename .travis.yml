@@ -10,6 +10,8 @@ services:
 before_script:
   - psql -c 'create database teamwork_test;' -U postgres
 
-scripts: npm test
+scripts: 
+  - npm test
+
 
 after_script: npm run coveralls
