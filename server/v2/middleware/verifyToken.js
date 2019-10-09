@@ -6,19 +6,24 @@ class Auth{
   static async verifyToken(req, res, next) {
     const token = req.headers['x-access-token'];
     if(!token) {
-      return res.status(400).send({ 'message': 'Token is not provided' });
+      return res.status(401).send({ error: 'Token is not provided' });
     }
     try {
       const decoded = await jwt.verify(token, process.env.SECRET);
  
       const { rows } = await runQuery(queries.isRegistered, [decoded.employeeId]);
       if(!rows[0]) {
-        return res.status(400).send({ 'message': 'The token you provided is invalid' });
+        return res.status(403).send({
+           status: 403, error: 'You need to be registered to perform this action' 
+          });
       }
       req.authorId = rows[0].id;
       next();
     } catch(error) {
-      return res.status(400).send(error);
+      return res.status(401).send({
+        status:401,
+        error: 'Invalid token!'
+      });
     }
   }
 }
