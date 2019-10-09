@@ -165,53 +165,7 @@ describe('Tests for auth endpoints', () => {
           done();
         });
     });
-    // it('Should return an error if a user tries to sign up when password is less than 6 characters', (done) => {
-    //   chai
-    //     .request(app)
-    //     .post('/api/v2/auth/signup')
-    //     .send({
-    //       'firstname': 'Patrick',
-    //       'lastname': 'Apps',
-    //       'email': 'valid@teamwork.com',
-    //       'password': '123',
-    //       'gender': 'male',
-    //       'jobRole': 'kkkkkkkkkkkkkkkkkkk',
-    //       'department': 'nkkn',
-    //       'address': 'KG 344 St'
-    //     })
-    //     .end((err, res) => {
-    //       expect(res).to.have.status(400);
-    //       expect(res.body.status).to.be.equal(400);
-    //       expect(res.body).to.have.keys('status', 'errors');
-    //       expect(res.body.errors).to.have.keys('body');
-    //       expect(res.body.errors.body.password).to.be.equal('Password must contain at least 6 characters');
-    //       done();
-    //     });
-    // });
-    //  it('Should return an error if a user tries to sign up when password is greater than 20 characters', (done) => {
-    //    chai
-    //      .request(app)
-    //      .post('/api/v2/auth/signup')
-    //      .send({
-    //        "firstname": "Rusimbi",
-    //        "lastname": "PatricK",
-    //        "email": "ajd@teamwodrk.com",
-    //        "password": "password",
-    //        "gender": "Male",
-    //        "jobrole" : "Accountant",
-    //        "department": "Finance",
-    //        "address": "KG 444 St"
-    //      })
-    //      .end((err, res) => {
-    //        expect(res).to.have.status(400);
-    //        expect(res.body.status).to.be.equal(400);
-    //        expect(res.body).to.have.keys('status', 'errors');
-    //        expect(res.body.errors).to.have.keys('body');
-    //        expect(res.body.errors.data.body.password).to.be.equal('Password can contain max 20 characters');
-    //        expect(res.body.errors).to.be.a('object');
-    //        done();
-    //      });
-    //  });
+    
     it('Should return an error if a user tries to sign up with a forged gender', (done) => {
       chai
         .request(app)

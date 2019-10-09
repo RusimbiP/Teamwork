@@ -1,7 +1,7 @@
 import { runQuery } from '../config/connection';
 import { queries }  from '../db/queries';
 import Helper  from '../helpers/helper'
-import { query } from 'express-validator';
+
 const {  hashPassword, Tokenize, comparePassword } = Helper;
 class service {
   static async create(input){
@@ -44,7 +44,7 @@ class service {
       if(!comparePassword(rows[0].password, credentials.password)){
         return { status:400, error: 'Wrong email and password combination'}
       }
-      const token = Tokenize(rows[0].id, rows[0].email);
+      const token = Tokenize(rows[0].email);
       return{ 
         status:200,
         message: 'User is successfully logged in',

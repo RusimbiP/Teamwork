@@ -26,7 +26,7 @@ const createTables = async () => {
       title TEXT NOT NULL,
       subTitle TEXT,
       article TEXT NOT NULL,
-      authorId TEXT NOT NULL REFERENCES users(email) ON DELETE CASCADE,
+      authorId TEXT NOT NULL,
       createdOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )`;
 
