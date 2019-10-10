@@ -151,7 +151,7 @@ export const checkComment =_=> [
 ];
 
 export const checkId = _ => [
-  check('articleId')
+  check('articleid')
     .isNumeric()
     .withMessage('article id must be a number'),
 ];
