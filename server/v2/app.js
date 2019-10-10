@@ -1,6 +1,7 @@
 import express from 'express';
 import userUrl from './routes/user';
 import articleUrl from './routes/article';
+import feedUrl from './routes/feed';
 
 
 require('dotenv').config();
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/v2/auth', userUrl);
 app.use('/api/v2/articles', articleUrl);
+app.use('/api/v2', feedUrl);
 
 app.get('/', (req, res) => res.send('Welcome to Teamwork'));
 

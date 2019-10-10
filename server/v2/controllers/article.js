@@ -11,6 +11,11 @@ class controller {
     res.status(response.status).json(response);
   }
 
+  static async getFeed(req, res){
+    const response = await service.getFeed();
+    res.status(response.status).json(response);
+  }
+
 }
 
 export default controller;

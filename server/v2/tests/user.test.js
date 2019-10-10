@@ -205,6 +205,7 @@ describe('Tests for auth endpoints', () => {
           done();
         });
     });
+  })
   describe('POST api/v2/auth/signin', () => {
     it('Should successfully sign in a user and return a token', (done) => {
       chai
@@ -236,5 +237,4 @@ describe('Tests for auth endpoints', () => {
         });
     });
   });
-  })
 });
