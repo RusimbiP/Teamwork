@@ -21,7 +21,7 @@ export const queries = {
   
   editArticle: `UPDATE articles SET title=$1,subtitle=$2,article=$3 WHERE articleid=$4 AND authorid = $5 returning *`,
   
-  getFeed: `SELECT * FROM articles`,
+  getFeed: `SELECT * FROM articles ORDER BY createdon DESC`,
 
   deleteArticle: `DELETE FROM articles WHERE articleid=$1 AND authorid = $2 returning *`
 }
