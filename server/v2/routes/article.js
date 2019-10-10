@@ -5,10 +5,10 @@ import { checkId } from '../helpers/validations';
 import errHandler from '../middleware/errorHandler';
 
 
-const { write, edit } = controller;
+const { writeArticle, editArticle } = controller;
 const articleUrl = Router();
 
-articleUrl.post('/', Auth.verifyToken, write);
-articleUrl.patch('/:articleid', checkId(), errHandler, Auth.verifyToken, edit);
+articleUrl.post('/', Auth.verifyToken, writeArticle);
+articleUrl.patch('/:articleid', checkId(), errHandler, Auth.verifyToken, editArticle);
 
 export default articleUrl;

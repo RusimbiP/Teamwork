@@ -2,7 +2,7 @@ import { runQuery } from '../config/connection';
 import { queries }  from '../db/queries';
 
 class service {
-  static async write(input, authorId){
+  static async writeArticle(input, authorId){
     const values = [
       input.title.trim() || 'Untitled',
       input.subtitle.trim(),
@@ -26,7 +26,7 @@ class service {
     }
   }
 
-  static async edit(input, articleId, authorId){
+  static async editArticle(input, articleId, authorId){
     const id = Object.values(articleId)[0];
     const articleid = Number(id);
     try {
