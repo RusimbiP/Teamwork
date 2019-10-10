@@ -80,7 +80,7 @@ class service {
 
     if(rows[0].authorid != authorId){
       return { 
-        status:403, 
+        status:401, 
         error: 'You can not delete an article you do not own'}
     }
     try {
