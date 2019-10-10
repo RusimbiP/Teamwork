@@ -95,5 +95,63 @@ describe('tests for comment and article endpoints', () => {
            done(err);
          });
      });
+     
+  describe(' PATCH ap1/v2/articles/:articleid', () => {
+     it('should not update an article if it is non-existing', (done) => {
+      chai
+        .request(app)
+        .patch('/api/v2/articles/100')
+        .set('x-access-token', `${userToken}`)
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.body.status).to.be.equal(404);
+          expect(res.body).to.be.an('object');
+          expect(res.body).to.have.keys(
+            'status',
+            'error'
+          );
+          expect(res.body.error).to.be.equal('You have not created such article');
+          done(err);
+        });
+    });
+
+
+    it('should update an article all fields are provided', (done) => {
+      chai
+        .request(app)
+        .patch('/api/v2/articles/1')
+        .set('x-access-token', `${userToken}`)
+        .send(mockArticle)
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body.status).to.be.equal(200);
+          expect(res.body).to.be.an('object');
+          expect(res.body.data).to.be.an('object');
+          expect(res.body).to.have.keys(
+            'status',
+            'data'
+          );
+          done(err);
+        });
+    });
+
+    it('should maintain data of an article nothing is provided', (done) => {
+      chai
+        .request(app)
+        .patch('/api/v2/articles/1')
+        .set('x-access-token', `${userToken}`)
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body.status).to.be.equal(200);
+          expect(res.body).to.be.an('object');
+          expect(res.body.data).to.be.an('object');
+          expect(res.body).to.have.keys(
+            'status',
+            'data'
+          );
+          done(err);
+        });
+    });
   });
+});
 });
