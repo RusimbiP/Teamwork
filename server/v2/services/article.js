@@ -67,6 +67,25 @@ class service {
     }
   }
 
+  static async deleteArticle(articleId, authorId){
+    const id = Object.values(articleId)[0];
+    const articleid = Number(id);
+    try {
+      const { rows } = await runQuery(queries.deleteArticle, [articleid, authorId]);
+      if(!rows[0]) {
+        return { 
+          status:404, 
+          error: 'You have not created such article to delete it'}
+      }
+      return { status:204}
+    } catch(error) {
+      return { 
+        status:503, 
+        error: 'service unavailable because it is under mantainance. Try again later'
+      }
+    }
+  }
+
 }
 
 export default service;
