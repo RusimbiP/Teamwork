@@ -26,6 +26,36 @@ class service {
     }
   }
 
+  static async edit(input, articleId, authorId){
+    const id = Object.values(articleId)[0];
+    const articleid = Number(id);
+    try {
+      const { rows } = await runQuery(queries.getArticle, [articleid, authorId]);
+    
+      if(!rows[0]) {
+        return { status:404, error: 'You have not created such article'}
+      }
+
+      const values = [
+        input.title || rows[0].title,
+        input.subtitle || rows[0].subtitle,
+        input.article || rows[0].article,
+        articleid,
+        authorId
+      ];
+
+      const edit= await runQuery(queries.editArticle, values);
+      const edited = edit.rows[0];
+      return { status:200, data:edited }
+      } catch(err) {
+        return { 
+          status:503, 
+          error: 'service unavailable because it is under mantainance. Try again later'
+        }
+      }
+  }
+
+
 }
 
 export default service;
