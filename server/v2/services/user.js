@@ -4,7 +4,7 @@ import Helper  from '../helpers/helper'
 
 const {  hashPassword, Tokenize, comparePassword } = Helper;
 class service {
-  static async create(input){
+  static async createUser(input){
     const values = [
       input.firstname,
       input.lastname,
@@ -35,7 +35,7 @@ class service {
   }
   }
 
-  static async login(credentials){
+  static async loginUser(credentials){
     const values = [
       credentials.email,
     ]

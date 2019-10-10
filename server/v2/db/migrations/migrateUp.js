@@ -22,7 +22,7 @@ const createTables = async () => {
 
   const articlesTable = `
     CREATE TABLE IF NOT EXISTS articles(
-      id SERIAL PRIMARY KEY UNIQUE,
+      articleId SERIAL PRIMARY KEY UNIQUE,
       title TEXT NOT NULL,
       subTitle TEXT,
       article TEXT NOT NULL,
@@ -32,8 +32,8 @@ const createTables = async () => {
 
   const commentsTable = `
     CREATE TABLE IF NOT EXISTS comments(
-      id SERIAL PRIMARY KEY UNIQUE,
-      articleId INTEGER NOT NULL REFERENCES articles(id) ON DELETE CASCADE,
+      commentId SERIAL PRIMARY KEY UNIQUE,
+      articleId INTEGER NOT NULL REFERENCES articles(articleId) ON DELETE CASCADE,
       articleTitle TEXT NOT NULL,
       article TEXT NOT NULL,
       comment TEXT NOT NULL,

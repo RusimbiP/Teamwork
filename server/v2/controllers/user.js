@@ -2,13 +2,13 @@
  import service from '../services/user';
 
  export default class controller {
-   static async create(req, res) {
-     const response = await service.create(req.body);
+   static async createUser(req, res) {
+     const response = await service.createUser(req.body);
      res.status(response.status).json(response);
    }
 
-   static async login(req, res) {
-    const response = await service.login(req.body);
+   static async loginUser(req, res) {
+    const response = await service.loginUser(req.body);
     res.status(response.status).json(response);
   }
  }
