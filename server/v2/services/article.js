@@ -55,6 +55,17 @@ class service {
       }
   }
 
+  static async getFeed() {
+    try {
+      const  { rows }  = await runQuery(queries.getFeed);
+      return { status:200, data: rows  }
+    } catch(error) {
+      return { 
+        status:503, 
+        error: 'service unavailable because it is under mantainance. Try again later'
+      }
+    }
+  }
 
 }
 
