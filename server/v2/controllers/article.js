@@ -16,6 +16,11 @@ class controller {
     res.status(response.status).json(response);
   }
 
+  static async deleteArticle(req, res){
+    const response = await service.deleteArticle(req.params, req.authorId);
+    res.status(response.status).json(response);
+  }
+
 }
 
 export default controller;

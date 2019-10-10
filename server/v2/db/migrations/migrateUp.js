@@ -12,7 +12,7 @@ const createTables = async () => {
       email TEXT NOT NULL UNIQUE,
       password TEXT NOT NULL,
       address TEXT NOT NULL,
-      jobRole TEXT NOT NULL,
+      jobrole TEXT NOT NULL,
       gender  TEXT NOT NULL,
       department TEXT NOT NULL,
       isAdmin TEXT DEFAULT false,
@@ -26,14 +26,14 @@ const createTables = async () => {
       title TEXT NOT NULL,
       subTitle TEXT,
       article TEXT NOT NULL,
-      authorId TEXT NOT NULL,
+      authorid TEXT NOT NULL,
       createdOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )`;
 
   const commentsTable = `
     CREATE TABLE IF NOT EXISTS comments(
-      commentId SERIAL PRIMARY KEY UNIQUE,
-      articleId INTEGER NOT NULL REFERENCES articles(articleId) ON DELETE CASCADE,
+      commentid SERIAL PRIMARY KEY UNIQUE,
+      articleid INTEGER NOT NULL REFERENCES articles(articleId) ON DELETE CASCADE,
       articleTitle TEXT NOT NULL,
       article TEXT NOT NULL,
       comment TEXT NOT NULL,

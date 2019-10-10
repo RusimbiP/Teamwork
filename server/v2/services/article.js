@@ -30,7 +30,7 @@ class service {
     const id = Object.values(articleId)[0];
     const articleid = Number(id);
     try {
-      const { rows } = await runQuery(queries.getArticle, [articleid, authorId]);
+      const { rows } = await runQuery(queries.getArticleWithAuthor, [articleid, authorId]);
     
       if(!rows[0]) {
         return { status:404, error: 'You have not created such article'}
@@ -59,6 +59,33 @@ class service {
     try {
       const  { rows }  = await runQuery(queries.getFeed);
       return { status:200, data: rows  }
+    } catch(error) {
+      return { 
+        status:503, 
+        error: 'service unavailable because it is under mantainance. Try again later'
+      }
+    }
+  }
+
+  static async deleteArticle(articleId, authorId){
+    const id = Object.values(articleId)[0];
+    const articleid = Number(id);
+    const { rows } = await runQuery(queries.getArticle, [articleid]);
+
+    if(!rows[0]) {
+      return { 
+        status:404, 
+        error: 'article not found'}
+    }
+
+    if(rows[0].authorid != authorId){
+      return { 
+        status:401, 
+        error: 'You can not delete an article you do not own'}
+    }
+    try {
+      const { rows } = await runQuery(queries.deleteArticle, [articleid, authorId]);
+      return { status:204 }
     } catch(error) {
       return { 
         status:503, 

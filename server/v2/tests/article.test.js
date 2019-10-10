@@ -167,6 +167,31 @@ describe(' GET api/v2/feed', () => {
   
 });
 
+  describe('DELETE /api/v2/articles/:articleid', () => {
+    it('should delete an article', (done) => {
+      chai
+        .request(app)
+        .delete('/api/v2/articles/1')
+        .set('x-access-token', `${userToken}`)
+        .end((err, res) => {
+          expect(res).to.have.status(204);
+          done(err);
+        });
+    });
+
+    it('should not delete an article that does not exist', (done) => {
+      chai
+        .request(app)
+        .delete('/api/v2/articles/10')
+        .set('x-access-token', `${userToken}`)
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.body.error).to.be.equal('article not found');
+          done(err);
+        });
+    });
+  })
+
 });
 
 
