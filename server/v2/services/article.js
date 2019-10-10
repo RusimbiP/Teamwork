@@ -29,13 +29,27 @@ class service {
   static async editArticle(input, articleId, authorId){
     const id = Object.values(articleId)[0];
     const articleid = Number(id);
-    try {
-      const { rows } = await runQuery(queries.getArticleWithAuthor, [articleid, authorId]);
-    
-      if(!rows[0]) {
-        return { status:404, error: 'You have not created such article'}
+
+    const { rows } = await runQuery(queries.getArticle, [articleid]);
+
+    if(!rows[0]) {
+      return { 
+        status:404, 
+        error: 'article not found'}
+    }
+
+    if(rows[0].authorid != authorId){
+      return { 
+        status:401, 
+        error: 'You can not edit an article you do not own'}
+    }
+
+    const { title, subtitle, article } = input;
+      if(!title || !subtitle || !article){
+        return { status:304 }
       }
 
+    try {
       const values = [
         input.title || rows[0].title,
         input.subtitle || rows[0].subtitle,
