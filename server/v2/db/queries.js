@@ -15,7 +15,9 @@ export const queries = {
   publish: `INSERT INTO articles(title, subtitle, article, authorid)
             VALUES($1, $2, $3, $4) returning *`,
   
-  getArticle: `SELECT * FROM articles WHERE articleid=$1 AND authorid = $2`,
+  getArticleWithAuthor: `SELECT * FROM articles WHERE articleid=$1 AND authorid = $2`,
+
+  getArticle: `SELECT * FROM articles WHERE articleid=$1`,
   
   editArticle: `UPDATE articles SET title=$1,subtitle=$2,article=$3 WHERE articleid=$4 AND authorid = $5 returning *`,
   
