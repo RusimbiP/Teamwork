@@ -1,16 +1,22 @@
 import { Router } from 'express';
 import controller from '../controllers/article';
 import Auth from '../middleware/verifyToken';
-import { checkId } from '../helpers/validations';
+import { checkId, checkArticle, checkTitle, checkSubTitle } from '../helpers/validations';
 import errHandler from '../middleware/errorHandler';
-import { check } from 'express-validator';
 
 
 const { writeArticle, editArticle, deleteArticle } = controller;
 const articleUrl = Router();
 
 articleUrl.post('/', Auth.verifyToken, writeArticle);
-articleUrl.patch('/:articleid', checkId(), errHandler, Auth.verifyToken, editArticle);
-articleUrl.delete('/:articleid', checkId(), Auth.verifyToken, deleteArticle);
+
+articleUrl.patch('/:articleid', 
+checkId(), 
+checkTitle(), 
+checkSubTitle(),
+checkArticle(), 
+errHandler, Auth.verifyToken, editArticle);
+
+articleUrl.delete('/:articleid', checkId(), errHandler, Auth.verifyToken, deleteArticle);
 
 export default articleUrl;

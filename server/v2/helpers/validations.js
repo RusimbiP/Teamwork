@@ -155,3 +155,42 @@ export const checkId = _ => [
     .isNumeric()
     .withMessage('article id must be a number'),
 ];
+
+export const checkTitle =_=> [
+  check('title')
+    .optional()
+    .not()
+    .isEmpty({ ignore_whitespace: true })
+    .withMessage(
+      'title cannot be blank',
+    )
+    .isLength({ min: 2, max: 100 })
+    .withMessage('title must be between 5 and 100 characters')
+    .trim()
+];
+
+export const checkSubTitle =_=> [
+  check('subtitle')
+    .optional()
+    .not()
+    .isEmpty({ ignore_whitespace: true })
+    .withMessage(
+      'subtitle cannot be blank',
+    )
+    .isLength({ min: 2, max: 100 })
+    .withMessage('subtitle must be between 5 and 100 characters')
+    .trim()
+];
+
+export const checkArticle =_=> [
+  check('article')
+    .optional()
+    .not()
+    .isEmpty({ ignore_whitespace: true })
+    .withMessage(
+      'subtitle cannot be blank',
+    )
+    .isLength({ min: 100 })
+    .withMessage('article must be atleast 100 characters')
+    .trim()
+];
