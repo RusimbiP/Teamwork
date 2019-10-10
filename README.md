@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/RusimbiP/Teamwork.svg?branch=develop)](https://travis-ci.org/RusimbiP/Teamwork)
-[![Coverage Status](https://coveralls.io/repos/github/RusimbiP/Teamwork/badge.svg?branch=develop)](https://coveralls.io/github/RusimbiP/Teamwork?branch=develop)
+[![Build Status](https://travis-ci.org/RusimbiP/Teamwork.svg?branch=develop)](https://travis-ci.org/RusimbiP/Teamwork
 [![Maintainability](https://api.codeclimate.com/v1/badges/e686f5d47b07d0b89953/maintainability)](https://codeclimate.com/github/RusimbiP/Teamwork/maintainability)
 # Teamwork
 ## TOOLS USED
