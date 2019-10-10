@@ -17,6 +17,7 @@ export const queries = {
   
   getArticle: `SELECT * FROM articles WHERE articleid=$1 AND authorid = $2`,
   
-  editArticle: `UPDATE articles SET title=$1,subtitle=$2,article=$3 WHERE articleid=$4 AND authorid = $5 returning *`
+  editArticle: `UPDATE articles SET title=$1,subtitle=$2,article=$3 WHERE articleid=$4 AND authorid = $5 returning *`,
+  getFeed: `SELECT * FROM articles`
 }
 
