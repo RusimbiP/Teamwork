@@ -186,7 +186,7 @@ describe(' GET api/v2/feed', () => {
         .set('x-access-token', `${userToken}`)
         .end((err, res) => {
           expect(res).to.have.status(404);
-          expect(res.body.error).to.be.equal('You have not created such article to delete it');
+          expect(res.body.error).to.be.equal('article not found');
           done(err);
         });
     });
