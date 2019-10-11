@@ -5,7 +5,7 @@ import feedUrl from './routes/feed';
 
 
 require('dotenv').config();
-
+require("babel-polyfill");
 const app = express();
 
 app.use(express.json());

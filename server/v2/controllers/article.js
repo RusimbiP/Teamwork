@@ -21,6 +21,16 @@ class controller {
     res.status(response.status).json(response);
   }
 
+  static async writeComment(req, res){
+    const response = await service.writeComment(req.body, req.params, req.authorId);
+    res.status(response.status).json(response);
+  }
+
+  static async getOneArticle(req, res){
+    const response = await service.getOneArticle(req.params);
+    res.status(response.status).json(response);
+  }
+
 }
 
 export default controller;

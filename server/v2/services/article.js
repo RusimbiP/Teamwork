@@ -63,7 +63,7 @@ class service {
 
       const edit= await runQuery(queries.editArticle, values);
       const edited = edit.rows[0];
-      return { status:200, data:edited, theAuthor}
+      return { status:200, data:{edited, theAuthor}}
       } catch(err) {
         return { 
           status:503, 
@@ -111,6 +111,71 @@ class service {
     }
   }
 
+  static async writeComment(input, articleId, authorId){
+    const id = Object.values(articleId)[0];
+    const articleid = Number(id);
+   
+    const article = await runQuery(queries.getArticle, [articleid]);
+    if(!article.rows[0]) {
+      return { 
+        status:404, 
+        error: 'article not found'}
+    }
+    
+    const theAuthor = await runQuery(queries.getAuthor, [authorId]);
+    const author = theAuthor.rows[0];
+
+    const values = [
+      articleid,
+      article.rows[0].title,
+      article.rows[0].article,
+      input.comment,
+      authorId
+    ];
+    
+    try {
+      const { rows } = await runQuery(queries.comment, values);
+      const newComment = rows[0];
+      return { 
+        status: 201, 
+        message: 'Comment succesfully created!',
+        data: { newComment, author}
+      }
+    } catch(error) {
+      return { 
+        status:503, 
+        error: 'service unavailable because it is under mantainance. Try again later'
+      }
+    }
+  }
+
+  static async getOneArticle( articleId){
+    const id = Object.values(articleId)[0];
+    const articleid = Number(id);
+     try {
+      const { rows } = await runQuery(queries.getArticle, [articleid]);
+  
+      if(!rows[0]) {
+        return { 
+          status:404, 
+          error: 'article not found'}
+      }
+       const article = rows[0];
+       const authorId = article.authorid;
+       const theAuthor = await runQuery(queries.getAuthor, [authorId]);
+       const author = theAuthor.rows[0];
+      
+       return { 
+         status: 200, 
+         data: { article, author}
+       }
+     } catch(error) {
+       return { 
+         status:503, 
+         error: 'service unavailable because it is under mantainance. Try again later'
+       }
+     }
+  }
 }
 
 export default service;
