@@ -33,10 +33,11 @@ const createTables = async () => {
   const commentsTable = `
     CREATE TABLE IF NOT EXISTS comments(
       commentid SERIAL PRIMARY KEY UNIQUE,
-      articleid INTEGER NOT NULL REFERENCES articles(articleId) ON DELETE CASCADE,
+      articleid INTEGER NOT NULL,
       articleTitle TEXT NOT NULL,
       article TEXT NOT NULL,
       comment TEXT NOT NULL,
+      authorid TEXT NOT NULL,
       createdOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   )`;
 

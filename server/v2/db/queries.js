@@ -29,6 +29,7 @@ export const queries = {
   /***
    * comment queries
    */
-  comment: `INSERT INTO comments(articleid, articletitle, article, comment, authorid) VALUES($1, $2, $3, $4, $5) returning *`
+  comment: `INSERT INTO comments(articleid, articletitle, article, comment, authorid) VALUES($1, $2, $3, $4, $5) returning *`,
+  getComments:`SELECT * FROM comments WHERE articleid=$1`
 }
 
