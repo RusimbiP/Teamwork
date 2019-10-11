@@ -160,6 +160,10 @@ class service {
           status:404, 
           error: 'article not found'}
       }
+       const allComments = await runQuery(queries.getComments, [articleid]);
+       const comments = allComments.rows[0];
+
+       const { commentid, authorid, comment } =comments;
        const article = rows[0];
        const authorId = article.authorid;
        const theAuthor = await runQuery(queries.getAuthor, [authorId]);
@@ -167,7 +171,16 @@ class service {
       
        return { 
          status: 200, 
-         data: { article, author}
+         data: {
+            article,
+             author, 
+             comments:[{
+               commentId:commentid, 
+               authorID:authorid,
+               comment:comment
+              }
+            ]
+            }
        }
      } catch(error) {
        return { 
