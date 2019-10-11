@@ -24,6 +24,11 @@ export const queries = {
   
   getFeed: `SELECT * FROM articles ORDER BY createdon DESC`,
 
-  deleteArticle: `DELETE FROM articles WHERE articleid=$1 AND authorid = $2 returning *`
+  deleteArticle: `DELETE FROM articles WHERE articleid=$1 AND authorid = $2 returning *`,
+
+  /***
+   * comment queries
+   */
+  comment: `INSERT INTO comments(articleid, articletitle, article, comment, authorid) VALUES($1, $2, $3, $4, $5) returning *`
 }
 
