@@ -229,9 +229,9 @@ describe('Tests for auth endpoints', () => {
           'password': 'kdnadfklk',
         })
         .end((err, res) => {
-          expect(res).to.have.status(400);
+          expect(res).to.have.status(401);
           expect(res.body).to.be.a('object');
-          expect(res.body.status).to.be.equal(400);
+          expect(res.body.status).to.be.equal(401);
           expect(res.body.error).to.be.equal('Wrong email and password combination');
           done();
         });
