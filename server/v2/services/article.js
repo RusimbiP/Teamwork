@@ -30,6 +30,9 @@ class service {
     const id = Object.values(articleId)[0];
     const articleid = Number(id);
 
+    const theAuthor = await runQuery(queries.getAuthor, [authorId]);
+    const author = theAuthor.rows[0];
+
     const { rows } = await runQuery(queries.getArticle, [articleid]);
 
     if(!rows[0]) {
@@ -45,7 +48,7 @@ class service {
     }
 
     const { title, subtitle, article } = input;
-      if(!title || !subtitle || !article){
+      if(!title && !subtitle && !article){
         return { status:304 }
       }
 
@@ -60,7 +63,7 @@ class service {
 
       const edit= await runQuery(queries.editArticle, values);
       const edited = edit.rows[0];
-      return { status:200, data:edited }
+      return { status:200, data:edited, theAuthor}
       } catch(err) {
         return { 
           status:503, 

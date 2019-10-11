@@ -88,8 +88,8 @@ describe('tests for comment and article endpoints', () => {
          .set('x-access-token', `${unRegUser}`)
          .send(mockArticle)
          .end((err, res) => {
-           expect(res).to.have.status(403);
-           expect(res.body.status).to.be.equal(403);
+           expect(res).to.have.status(401);
+           expect(res.body.status).to.be.equal(401);
            expect(res.body.error).to.be.equal('You need to be registered to perform this action');
            expect(res.body).to.be.an('object');
            done(err);
@@ -127,10 +127,6 @@ describe(' PATCH ap1/v2/articles/:articleid', () => {
        expect(res.body.status).to.be.equal(200);
        expect(res.body).to.be.an('object');
        expect(res.body.data).to.be.an('object');
-       expect(res.body).to.have.keys(
-         'status',
-         'data'
-       );
        done(err);
      });
  });
