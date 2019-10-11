@@ -8,6 +8,7 @@ export const queries = {
               VALUES($1,$2,$3,$4,$5,$6,$7,$8, $9) returning *`,
 
   isRegistered:  'SELECT * FROM users WHERE email = $1',
+  getAuthor: 'SELECT * FROM users WHERE id = $1',
 
   /**
    * Article queries
